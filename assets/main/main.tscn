@@ -17,13 +17,16 @@ visible = false
 metadata/_edit_lock_ = true
 
 [node name="Game" parent="." instance=ExtResource("2_vav7n")]
+process_mode = 4
 visible = false
 metadata/_edit_lock_ = true
 
 [node name="Credits" parent="." instance=ExtResource("3_puohy")]
+process_mode = 4
 visible = false
 metadata/_edit_lock_ = true
 
 [connection signal="game_start" from="MainMenu" to="." method="_on_main_menu_game_start"]
 [connection signal="open_settings" from="MainMenu" to="." method="_on_main_menu_open_settings"]
 [connection signal="done" from="SettingsMenu" to="." method="_on_settings_menu_done"]
+[connection signal="finish" from="Game" to="." method="_on_game_finish"]
