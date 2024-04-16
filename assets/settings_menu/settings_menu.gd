@@ -1,5 +1,7 @@
 extends Control
 
+signal done
+
 var music_value
 var sfx_value
 
@@ -22,3 +24,7 @@ func _on_mute_check_box_toggled(toggled_on):
 	else:
 		$ColumnsContainer/MusicVolContainer/MusicVolSlider.value = music_value
 		$ColumnsContainer/SfxVolContainer/SfxVolSlider.value = sfx_value
+
+
+func _on_done_button_pressed():
+	emit_signal("done")
