@@ -14,6 +14,7 @@ metadata/_edit_lock_ = true
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_rs4ww")]
 visible = false
+metadata/_edit_lock_ = true
 
 [node name="Game" parent="." instance=ExtResource("2_vav7n")]
 visible = false
