@@ -66,7 +66,7 @@ vertical_alignment = 1
 
 [node name="FullscreenCheckBox" type="CheckBox" parent="ColumnsContainer/FullscreenContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 
 [node name="SfxVolContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2
@@ -101,7 +101,7 @@ vertical_alignment = 1
 
 [node name="MuteCheckBox" type="CheckBox" parent="ColumnsContainer/MuteContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 2
 
 [node name="DoneButton" type="Button" parent="."]
 layout_mode = 0
@@ -112,5 +112,6 @@ offset_bottom = 984.0
 theme_override_font_sizes/font_size = 60
 text = "Done"
 
+[connection signal="toggled" from="ColumnsContainer/FullscreenContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
 [connection signal="toggled" from="ColumnsContainer/MuteContainer/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]

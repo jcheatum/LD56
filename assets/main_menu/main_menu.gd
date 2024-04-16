@@ -18,7 +18,6 @@ func _on_start_pressed():
 
 
 func _on_settings_pressed():
-	self.hide()
 	emit_signal("open_settings")
 
 

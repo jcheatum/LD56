@@ -28,3 +28,10 @@ func _on_mute_check_box_toggled(toggled_on):
 
 func _on_done_button_pressed():
 	emit_signal("done")
+
+
+func _on_fullscreen_check_box_toggled(toggled_on):
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
