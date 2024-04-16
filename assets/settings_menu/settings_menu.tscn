@@ -50,7 +50,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-value = 100.0
+min_value = -80.0
+max_value = 24.0
 
 [node name="FullscreenContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2
@@ -85,7 +86,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-value = 100.0
+min_value = -80.0
+max_value = 24.0
 
 [node name="MuteContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2
@@ -112,6 +114,8 @@ offset_bottom = 984.0
 theme_override_font_sizes/font_size = 60
 text = "Done"
 
+[connection signal="value_changed" from="ColumnsContainer/MusicVolContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="toggled" from="ColumnsContainer/FullscreenContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="value_changed" from="ColumnsContainer/SfxVolContainer/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="toggled" from="ColumnsContainer/MuteContainer/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]

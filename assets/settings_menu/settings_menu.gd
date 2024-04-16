@@ -1,6 +1,8 @@
 extends Control
 
 signal done
+signal music_vol_set(volume: float)
+signal sfx_vol_set(volume: float)
 
 var music_value
 var sfx_value
@@ -35,3 +37,13 @@ func _on_fullscreen_check_box_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_music_vol_slider_value_changed(value):
+	music_value = value
+	emit_signal("music_vol_set", value)
+
+
+func _on_sfx_vol_slider_value_changed(value):
+	sfx_value = value
+	emit_signal("sfx_vol_set", value)
