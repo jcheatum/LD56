@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://caoqyrbswv48j"]
+
+[ext_resource type="Script" path="res://assets/settings_menu/settings_menu.gd" id="1_8rpy5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_osmpe"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_71sn8"]
+font_size = 24
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rpy5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 384.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_osmpe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColumnsContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 384.0
+offset_right = 1728.0
+offset_bottom = 1024.0
+columns = 2
+
+[node name="MusicVolContainer" type="GridContainer" parent="ColumnsContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+columns = 2
+
+[node name="MusicVolLabel" type="Label" parent="ColumnsContainer/MusicVolContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_71sn8")
+vertical_alignment = 1
+
+[node name="MusicVolSlider" type="HSlider" parent="ColumnsContainer/MusicVolContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+value = 100.0
+
+[node name="FullscreenContainer" type="GridContainer" parent="ColumnsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="FullscreenLabel" type="Label" parent="ColumnsContainer/FullscreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Fullscreen"
+label_settings = SubResource("LabelSettings_71sn8")
+vertical_alignment = 1
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="ColumnsContainer/FullscreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SfxVolContainer" type="GridContainer" parent="ColumnsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+columns = 2
+
+[node name="SfxVolLabel" type="Label" parent="ColumnsContainer/SfxVolContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_71sn8")
+vertical_alignment = 1
+
+[node name="SfxVolSlider" type="HSlider" parent="ColumnsContainer/SfxVolContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+value = 100.0
+
+[node name="MuteContainer" type="GridContainer" parent="ColumnsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="MuteLabel" type="Label" parent="ColumnsContainer/MuteContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Mute"
+label_settings = SubResource("LabelSettings_71sn8")
+vertical_alignment = 1
+
+[node name="MuteCheckBox" type="CheckBox" parent="ColumnsContainer/MuteContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="toggled" from="ColumnsContainer/MuteContainer/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]
