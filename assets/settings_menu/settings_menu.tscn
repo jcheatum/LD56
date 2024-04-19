@@ -50,6 +50,8 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+focus_neighbor_right = NodePath("../../FullscreenContainer/FullscreenCheckBox")
+focus_neighbor_bottom = NodePath("../../SfxVolContainer/SfxVolSlider")
 min_value = -80.0
 max_value = 24.0
 
@@ -68,6 +70,8 @@ vertical_alignment = 1
 [node name="FullscreenCheckBox" type="CheckBox" parent="ColumnsContainer/FullscreenContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
+focus_neighbor_left = NodePath("../../MusicVolContainer/MusicVolSlider")
+focus_neighbor_bottom = NodePath("../../MuteContainer/MuteCheckBox")
 
 [node name="SfxVolContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2
@@ -86,6 +90,9 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
+focus_neighbor_top = NodePath("../../MusicVolContainer/MusicVolSlider")
+focus_neighbor_right = NodePath("../../MuteContainer/MuteCheckBox")
+focus_neighbor_bottom = NodePath("../../../DoneButton")
 min_value = -80.0
 max_value = 24.0
 
@@ -104,6 +111,9 @@ vertical_alignment = 1
 [node name="MuteCheckBox" type="CheckBox" parent="ColumnsContainer/MuteContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
+focus_neighbor_left = NodePath("../../SfxVolContainer/SfxVolSlider")
+focus_neighbor_top = NodePath("../../FullscreenContainer/FullscreenCheckBox")
+focus_neighbor_bottom = NodePath("../../../DoneButton")
 
 [node name="DoneButton" type="Button" parent="."]
 layout_mode = 0
@@ -111,6 +121,7 @@ offset_left = 640.0
 offset_top = 832.0
 offset_right = 1280.0
 offset_bottom = 984.0
+focus_neighbor_top = NodePath("../ColumnsContainer/SfxVolContainer/SfxVolSlider")
 theme_override_font_sizes/font_size = 60
 text = "Done"
 

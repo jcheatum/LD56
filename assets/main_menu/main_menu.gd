@@ -5,7 +5,8 @@ signal open_settings
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$ButtonsContainer/Start.grab_focus()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,3 +24,7 @@ func _on_settings_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_settings_menu_done():
+	$ButtonsContainer/Settings.grab_focus()

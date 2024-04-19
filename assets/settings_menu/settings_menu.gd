@@ -47,3 +47,7 @@ func _on_music_vol_slider_value_changed(value):
 func _on_sfx_vol_slider_value_changed(value):
 	sfx_value = value
 	emit_signal("sfx_vol_set", value)
+
+
+func _on_main_menu_open_settings():
+	$DoneButton.grab_focus()

@@ -32,7 +32,9 @@ metadata/_edit_lock_ = true
 
 [connection signal="game_start" from="MainMenu" to="." method="_on_main_menu_game_start"]
 [connection signal="open_settings" from="MainMenu" to="." method="_on_main_menu_open_settings"]
+[connection signal="open_settings" from="MainMenu" to="SettingsMenu" method="_on_main_menu_open_settings"]
 [connection signal="done" from="SettingsMenu" to="." method="_on_settings_menu_done"]
+[connection signal="done" from="SettingsMenu" to="MainMenu" method="_on_settings_menu_done"]
 [connection signal="music_vol_set" from="SettingsMenu" to="." method="_on_settings_menu_music_vol_set"]
 [connection signal="sfx_vol_set" from="SettingsMenu" to="." method="_on_settings_menu_sfx_vol_set"]
 [connection signal="finished" from="Game" to="." method="_on_game_finished"]

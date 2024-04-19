@@ -34,6 +34,8 @@ offset_bottom = 704.0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Settings")
 theme_override_font_sizes/font_size = 60
 text = "Start"
 
@@ -41,6 +43,8 @@ text = "Start"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Exit")
 theme_override_font_sizes/font_size = 60
 text = "Settings"
 
@@ -48,6 +52,8 @@ text = "Settings"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Start")
 theme_override_font_sizes/font_size = 60
 text = "Exit"
 
