@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5lepvip4no64"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_7vqpg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmwyf"]
+font_size = 150
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vqpg")
+
+[node name="Paused" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 384.0
+text = "Paused"
+label_settings = SubResource("LabelSettings_nmwyf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 704.0
+
+[node name="Resume" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Settings")
+theme_override_font_sizes/font_size = 60
+text = "Resume"
+
+[node name="Settings" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../ToMenu")
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+
+[node name="ToMenu" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Quit")
+theme_override_font_sizes/font_size = 60
+text = "Return to Menu"
+
+[node name="Quit" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../ToMenu")
+focus_neighbor_bottom = NodePath("../Resume")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+
+[connection signal="pressed" from="ButtonsContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ButtonsContainer/ToMenu" to="." method="_on_to_menu_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]
