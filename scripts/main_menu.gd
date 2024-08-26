@@ -25,4 +25,4 @@ func focus_settings():
 
 
 func _on_pause_menu_return_to_menu():
-	pass # Replace with function body.
+	$ButtonsContainer/Start.grab_focus()

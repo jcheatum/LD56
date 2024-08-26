@@ -35,6 +35,7 @@ func _on_settings_menu_sfx_vol_set(volume):
 func _on_game_paused():
 	get_tree().paused = true
 	$PauseMenu.show()
+	$PauseMenu/ButtonsContainer/Resume.grab_focus()
 
 
 func _on_pause_menu_resume():
