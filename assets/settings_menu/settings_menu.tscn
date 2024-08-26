@@ -125,8 +125,10 @@ focus_neighbor_top = NodePath("../ColumnsContainer/SfxVolContainer/SfxVolSlider"
 theme_override_font_sizes/font_size = 60
 text = "Done"
 
+[connection signal="drag_ended" from="ColumnsContainer/MusicVolContainer/MusicVolSlider" to="." method="_on_music_vol_slider_drag_ended"]
 [connection signal="value_changed" from="ColumnsContainer/MusicVolContainer/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
 [connection signal="toggled" from="ColumnsContainer/FullscreenContainer/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="drag_ended" from="ColumnsContainer/SfxVolContainer/SfxVolSlider" to="." method="_on_sfx_vol_slider_drag_ended"]
 [connection signal="value_changed" from="ColumnsContainer/SfxVolContainer/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
 [connection signal="toggled" from="ColumnsContainer/MuteContainer/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]
 [connection signal="pressed" from="DoneButton" to="." method="_on_done_button_pressed"]
