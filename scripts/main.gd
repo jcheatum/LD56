@@ -37,3 +37,10 @@ func _on_game_paused():
 func _on_pause_menu_resume():
 	get_tree().paused = false
 	$PauseMenu.hide()
+
+
+func _on_pause_menu_return_to_menu():
+	get_tree().paused = false
+	$PauseMenu.hide()
+	$Game.hide()
+	$MainMenu.show()
