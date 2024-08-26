@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var settings_return = $MainMenu
 
 func _on_main_menu_game_start():
 	$MainMenu.hide()
@@ -8,12 +9,14 @@ func _on_main_menu_game_start():
 
 func _on_main_menu_open_settings():
 	$MainMenu.hide()
+	settings_return = $MainMenu
 	$SettingsMenu.show()
 
 
 func _on_settings_menu_done():
 	$SettingsMenu.hide()
-	$MainMenu.show()
+	settings_return.focus_settings()
+	settings_return.show()
 
 
 func _on_game_finished():
@@ -44,3 +47,9 @@ func _on_pause_menu_return_to_menu():
 	$PauseMenu.hide()
 	$Game.hide()
 	$MainMenu.show()
+
+
+func _on_pause_menu_open_settings():
+	$PauseMenu.hide()
+	settings_return = $PauseMenu
+	$SettingsMenu.show()

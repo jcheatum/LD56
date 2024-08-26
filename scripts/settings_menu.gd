@@ -55,3 +55,7 @@ func _on_music_vol_slider_drag_ended(value_changed):
 func _on_sfx_vol_slider_drag_ended(value_changed):
 	if value_changed:
 		sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
+
+
+func _on_pause_menu_open_settings():
+	$DoneButton.grab_focus()

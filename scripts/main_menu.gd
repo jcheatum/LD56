@@ -20,5 +20,9 @@ func _on_exit_pressed():
 	get_tree().quit()
 
 
-func _on_settings_menu_done():
+func focus_settings():
 	$ButtonsContainer/Settings.grab_focus()
+
+
+func _on_pause_menu_return_to_menu():
+	pass # Replace with function body.
