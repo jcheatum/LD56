@@ -9,20 +9,16 @@ var sfx_value
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	music_value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.value
+	sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
+	
 
 func _on_mute_check_box_toggled(toggled_on):
 	if toggled_on:
 		music_value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.value
 		sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
-		$ColumnsContainer/MusicVolContainer/MusicVolSlider.value = 0
-		$ColumnsContainer/SfxVolContainer/SfxVolSlider.value = 0
+		$ColumnsContainer/MusicVolContainer/MusicVolSlider.value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.min_value
+		$ColumnsContainer/SfxVolContainer/SfxVolSlider.value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.min_value
 	else:
 		$ColumnsContainer/MusicVolContainer/MusicVolSlider.value = music_value
 		$ColumnsContainer/SfxVolContainer/SfxVolSlider.value = sfx_value
@@ -40,14 +36,22 @@ func _on_fullscreen_check_box_toggled(toggled_on):
 
 
 func _on_music_vol_slider_value_changed(value):
-	music_value = value
 	emit_signal("music_vol_set", value)
 
 
 func _on_sfx_vol_slider_value_changed(value):
-	sfx_value = value
 	emit_signal("sfx_vol_set", value)
 
 
 func _on_main_menu_open_settings():
 	$DoneButton.grab_focus()
+
+
+func _on_music_vol_slider_drag_ended(value_changed):
+	if value_changed:
+		music_value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.value
+
+
+func _on_sfx_vol_slider_drag_ended(value_changed):
+	if value_changed:
+		sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
