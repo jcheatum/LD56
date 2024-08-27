@@ -7,7 +7,7 @@ projects.
 
 ## High-Level Structure
 
-- **Main** - Top-level master node which orchestrates all of the primary scenes
+- **Main** - Top-level manager node which orchestrates all of the primary scenes
 and controls which one is shown to the player.
   - **MainMenu** - The main menu of the game. This is the first thing that will
   be displayed when the game starts.
