@@ -9,11 +9,11 @@ func _ready():
 
 
 func _on_start_pressed():
-	emit_signal("game_start")
+	game_start.emit()
 
 
 func _on_settings_pressed():
-	emit_signal("open_settings")
+	open_settings.emit()
 
 
 func _on_exit_pressed():
