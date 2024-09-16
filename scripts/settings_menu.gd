@@ -25,7 +25,7 @@ func _on_mute_check_box_toggled(toggled_on):
 
 
 func _on_done_button_pressed():
-	emit_signal("done")
+	done.emit()
 
 
 func _on_fullscreen_check_box_toggled(toggled_on):
@@ -36,11 +36,11 @@ func _on_fullscreen_check_box_toggled(toggled_on):
 
 
 func _on_music_vol_slider_value_changed(value):
-	emit_signal("music_vol_set", value)
+	music_vol_set.emit(value)
 
 
 func _on_sfx_vol_slider_value_changed(value):
-	emit_signal("sfx_vol_set", value)
+	sfx_vol_set.emit(value)
 
 
 func _on_main_menu_open_settings():
