@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b45go3rn4wxs0"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ant.gd" id="1_pol85"]
+[ext_resource type="Texture2D" uid="uid://t7rqvcryqrsi" path="res://assets/enemies/ant/ant_temp_sprite.png" id="2_p7o36"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="2_so26o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+
+[node name="Ant" type="Area2D"]
+script = ExtResource("1_pol85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6uikl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_p7o36")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_so26o")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]

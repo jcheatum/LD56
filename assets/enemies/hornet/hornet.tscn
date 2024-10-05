@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://st74xvi37fi8"]
+
+[ext_resource type="Script" path="res://scripts/enemies/hornet.gd" id="1_7efjj"]
+[ext_resource type="Texture2D" uid="uid://cgkwtw8g2nvnv" path="res://assets/enemies/hornet/hornet_temp_sprite.png" id="2_x5f01"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_f6xfa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+
+[node name="Hornet" type="Area2D"]
+script = ExtResource("1_7efjj")
+speed = 120.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6uikl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_x5f01")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_f6xfa")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]

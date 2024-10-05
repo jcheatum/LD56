@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyk41k8sq3gr6"]
+
+[ext_resource type="Script" path="res://assets/enemies/navigation_test_scene.gd" id="1_0m5hh"]
+[ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="1_1qff8"]
+[ext_resource type="PackedScene" uid="uid://dhvwn0qshttyd" path="res://assets/enemies/roach/roach.tscn" id="3_752og"]
+[ext_resource type="PackedScene" uid="uid://bd3n2lt26gsao" path="res://assets/enemies/fly/fly.tscn" id="4_e5wgs"]
+[ext_resource type="PackedScene" uid="uid://g6beos44pbpw" path="res://assets/enemies/bee/bee.tscn" id="5_38q6d"]
+[ext_resource type="PackedScene" uid="uid://bthk0l3dv3a5q" path="res://assets/enemies/ladybug/ladybug.tscn" id="6_yhvu6"]
+[ext_resource type="PackedScene" uid="uid://st74xvi37fi8" path="res://assets/enemies/hornet/hornet.tscn" id="7_f2s4r"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xmqjm"]
+vertices = PackedVector2Array(1576.07, 840.07, 1571.07, 139.32, 1707.11, 143.68, 1716.88, 974.938, 119.117, 966.047, 294.211, 830.93, 129.867, 111.406, 279.188, 117.602)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(120, 101, 109, 976, 1727, 985, 1717, 134, 1561, 129, 1566, 830, 304, 821, 289, 108)])
+
+[node name="NavigationTestScene" type="Node2D"]
+script = ExtResource("1_0m5hh")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(90, 100, 87, 993, 1750, 1004, 1736, 114, 1539, 103, 1532, 808, 325, 801, 316, 103)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_xmqjm")
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(1643, 198)
+
+[node name="Ant" parent="." instance=ExtResource("1_1qff8")]
+position = Vector2(161, 141)
+
+[node name="Roach" parent="." instance=ExtResource("3_752og")]
+position = Vector2(199, 311)
+
+[node name="Fly" parent="." instance=ExtResource("4_e5wgs")]
+position = Vector2(253, 185)
+
+[node name="Bee" parent="." instance=ExtResource("5_38q6d")]
+position = Vector2(263, 255)
+
+[node name="Ladybug" parent="." instance=ExtResource("6_yhvu6")]
+position = Vector2(170, 227)
+
+[node name="Hornet" parent="." instance=ExtResource("7_f2s4r")]
+position = Vector2(217, 167)

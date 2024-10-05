@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd3n2lt26gsao"]
+
+[ext_resource type="Script" path="res://scripts/enemies/fly.gd" id="1_b4f53"]
+[ext_resource type="Texture2D" uid="uid://c6c1328i6ikms" path="res://assets/enemies/fly/fly_temp_sprite.png" id="2_5nn62"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_aosao"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+
+[node name="Fly" type="Area2D"]
+script = ExtResource("1_b4f53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6uikl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_5nn62")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_aosao")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]

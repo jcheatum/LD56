@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bthk0l3dv3a5q"]
+
+[ext_resource type="Script" path="res://scripts/enemies/ladybug.gd" id="1_wev5w"]
+[ext_resource type="Texture2D" uid="uid://c4ntxl8rq1iqr" path="res://assets/enemies/ladybug/ladybug_temp_sprite.png" id="2_aswi6"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_ot80v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+
+[node name="Ladybug" type="Area2D"]
+script = ExtResource("1_wev5w")
+speed = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6uikl")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_aswi6")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_ot80v")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
+max_value = 150.0
+value = 150.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]
