@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://vytgk24hnpyn"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_qk1or"]
+[ext_resource type="Script" path="res://scripts/towers/tower_fly_swatter.gd" id="2_4io40"]
+[ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_q4b80"]
+[ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="4_nf2te"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1cyq6"]
+radius = 59.3043
+
+[node name="Fly Swatter" instance=ExtResource("1_qk1or")]
+script = ExtResource("2_4io40")
+swat_rate = 2.0
+rotatable = true
+damage = 20.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_q4b80")
+
+[node name="Swatter" type="Node2D" parent="." index="2"]
+
+[node name="SwatZone" type="Area2D" parent="Swatter" index="0"]
+position = Vector2(127, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swatter/SwatZone" index="0"]
+shape = SubResource("CircleShape2D_1cyq6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Swatter/SwatZone" index="1"]
+modulate = Color(1, 1, 1, 0.607843)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_nf2te")
