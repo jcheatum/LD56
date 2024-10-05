@@ -12,3 +12,7 @@ func _physics_process(delta: float) -> void:
 
 func set_target(location: Vector2) -> void:
 	navigator.target_position = location
+
+
+func die() -> void:
+	self.free()

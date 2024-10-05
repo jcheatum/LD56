@@ -23,3 +23,5 @@ offset_right = 105.0
 offset_bottom = 4.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]
