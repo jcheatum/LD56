@@ -69,7 +69,7 @@ func ROTATING_ENTER():
 	
 func ROTATING_UPDATE(_delta):
 	aim_direction = (get_global_mouse_position() - global_position).normalized()
-	if Input.is_action_just_released("left_click"):
+	if Input.is_action_just_pressed("left_click"):
 			change_state(TowerState.ACTIVE)
 	
 func ROTATING_EXIT():
@@ -85,5 +85,8 @@ func ACTIVE_EXIT():
 	pass
 
 func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> void:
-	if Input.is_action_just_pressed("left_click") and current_state==TowerState.ACTIVE and movable:
-		change_state(TowerState.PLACING)
+	if Input.is_action_just_pressed("left_click") and current_state==TowerState.ACTIVE:
+		if movable:
+			change_state(TowerState.PLACING)
+		elif rotatable:
+			change_state(TowerState.ROTATING)

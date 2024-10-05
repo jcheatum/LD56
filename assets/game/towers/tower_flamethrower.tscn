@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cllnb76d6v0cx"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_k3mb8"]
+[ext_resource type="Script" path="res://scripts/towers/tower_flamethrower.gd" id="2_k24ie"]
+[ext_resource type="Texture2D" uid="uid://cp7cjufds6lya" path="res://assets/game/towers/test_flame.bmp" id="3_8e0ek"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vl2mh"]
+radius = 59.3043
+
+[node name="Flamethrower" instance=ExtResource("1_k3mb8")]
+script = ExtResource("2_k24ie")
+on_timer = 3.0
+off_timer = 3.0
+rotatable = true
+damage = 1.0
+
+[node name="Flame" type="Node2D" parent="." index="2"]
+visible = false
+rotation = 1.5708
+
+[node name="FlameZone" type="Area2D" parent="Flame" index="0"]
+position = Vector2(127, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame/FlameZone" index="0"]
+shape = SubResource("CircleShape2D_vl2mh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Flame/FlameZone" index="1"]
+modulate = Color(1, 1, 1, 0.607843)
+texture = ExtResource("3_8e0ek")

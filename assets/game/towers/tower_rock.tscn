@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://n12mqoku2wgp"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_3j0au"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v67po"]
+radius = 84.0
+
+[node name="Rock" instance=ExtResource("1_3j0au")]
+position = Vector2(435, 301)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("CircleShape2D_v67po")
