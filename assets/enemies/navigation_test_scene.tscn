@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyk41k8sq3gr6"]
+
+[ext_resource type="Script" path="res://assets/enemies/navigation_test_scene.gd" id="1_0m5hh"]
+[ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="1_1qff8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xmqjm"]
+vertices = PackedVector2Array(1644.82, 106.672, 1715.91, 104.328, 1709.07, 982.008, 1629.81, 901.898, 125.047, 984.977, 194.969, 916.102, 129.938, 111.344, 196.969, 113.648)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(120, 101, 115, 995, 1719, 992, 1726, 94, 1635, 97, 1620, 892, 205, 906, 207, 104)])
+
+[node name="NavigationTestScene" type="Node2D"]
+script = ExtResource("1_0m5hh")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_xmqjm")
+
+[node name="Ant" parent="." instance=ExtResource("1_1qff8")]
+position = Vector2(164, 158)
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(1680, 154)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(90, 100, 87, 993, 1750, 1004, 1736, 114, 1622, 106, 1595, 868, 233, 872, 239, 93)
