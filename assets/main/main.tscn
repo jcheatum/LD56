@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btxni68ipnmdx"]
+[gd_scene load_steps=8 format=3 uid="uid://btxni68ipnmdx"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_awvlw"]
 [ext_resource type="PackedScene" uid="uid://qpedvr1uwrji" path="res://assets/main_menu/main_menu.tscn" id="1_hi0c4"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://vxct5up0qat6" path="res://assets/game/game.tscn" id="2_vav7n"]
 [ext_resource type="PackedScene" uid="uid://5strikbrm5oi" path="res://assets/credits/credits.tscn" id="3_puohy"]
 [ext_resource type="PackedScene" uid="uid://c5lepvip4no64" path="res://assets/pause_menu/pause_menu.tscn" id="6_hrh1a"]
+[ext_resource type="AudioStream" uid="uid://bo534qtdiprcg" path="res://assets/audio/music/tiny_creatures_loop.wav" id="7_0vl0g"]
 
 [node name="Main" type="Node2D"]
 process_mode = 3
@@ -30,6 +31,8 @@ visible = false
 visible = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0vl0g")
+autoplay = true
 
 [node name="SfxPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
