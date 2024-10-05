@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b45go3rn4wxs0"]
+[gd_scene load_steps=4 format=3 uid="uid://b45go3rn4wxs0"]
 
 [ext_resource type="Script" path="res://scripts/enemies/ant.gd" id="1_pol85"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="2_so26o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
 
@@ -11,3 +12,9 @@ script = ExtResource("1_pol85")
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="HealthBar" parent="." instance=ExtResource("2_so26o")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
