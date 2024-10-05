@@ -4,6 +4,7 @@ class_name Bug extends Area2D
 var navigator: NavigationAgent2D
 var velocity: Vector2 = Vector2.ZERO
 var health_bar: HealthBar
+var rotation_container
 
 func _physics_process(delta: float) -> void:
 	# Update velocity according to navigation and move
@@ -11,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	velocity = Global.exp_decay(velocity, direction.normalized() * speed, 16, delta)
 	navigator.set_velocity(velocity)
 	self.position += velocity * delta
+	rotation_container.rotation = velocity.angle() + PI/2
 
 
 # Sets the navigation target for this bug to `location`
