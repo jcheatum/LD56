@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhh0d26ifr0af"]
+
+[ext_resource type="PackedScene" uid="uid://iyrx32kbvvls" path="res://assets/game/towers/tower_magnifying_glass.tscn" id="1_vtdii"]
+[ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="2_641sc"]
+
+[node name="JakeTestScene" type="Node2D"]
+
+[node name="Magnifying Glass" parent="." instance=ExtResource("1_vtdii")]
+position = Vector2(505, 348)
+
+[node name="Ant" parent="." instance=ExtResource("2_641sc")]
+position = Vector2(624, 431)
