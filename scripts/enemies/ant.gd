@@ -7,10 +7,6 @@ func _ready() -> void:
 	self.health_bar = $HealthBar
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+# Ants die when they are killed
 func _on_health_bar_empty() -> void:
 	die()
