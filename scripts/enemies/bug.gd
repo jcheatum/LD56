@@ -23,6 +23,6 @@ func die() -> void:
 	self.queue_free()
 
 
-# Do `value` percentage points of damage to this bug
+# Do `value` points of damage to this bug
 func damage(value: float) -> void: 
 	health_bar.damage(value)

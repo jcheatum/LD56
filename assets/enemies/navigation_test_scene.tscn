@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyk41k8sq3gr6"]
+[gd_scene load_steps=5 format=3 uid="uid://dyk41k8sq3gr6"]
 
 [ext_resource type="Script" path="res://assets/enemies/navigation_test_scene.gd" id="1_0m5hh"]
 [ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="1_1qff8"]
+[ext_resource type="PackedScene" uid="uid://dhvwn0qshttyd" path="res://assets/enemies/roach/roach.tscn" id="3_752og"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xmqjm"]
 vertices = PackedVector2Array(1644.82, 106.672, 1715.91, 104.328, 1709.07, 982.008, 1629.81, 901.898, 125.047, 984.977, 194.969, 916.102, 129.938, 111.344, 196.969, 113.648)
@@ -15,7 +16,10 @@ script = ExtResource("1_0m5hh")
 navigation_polygon = SubResource("NavigationPolygon_xmqjm")
 
 [node name="Ant" parent="." instance=ExtResource("1_1qff8")]
-position = Vector2(164, 158)
+position = Vector2(145, 151)
+
+[node name="Roach" parent="." instance=ExtResource("3_752og")]
+position = Vector2(178, 151)
 
 [node name="Target" type="Node2D" parent="."]
 position = Vector2(1680, 154)

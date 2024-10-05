@@ -1,4 +1,4 @@
-class_name Ant extends Bug
+class_name Roach extends Bug
 
 
 # Called when the node enters the scene tree for the first time.

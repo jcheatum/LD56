@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhvwn0qshttyd"]
+
+[ext_resource type="Script" path="res://scripts/enemies/roach.gd" id="1_35c57"]
+[ext_resource type="Texture2D" uid="uid://t7rqvcryqrsi" path="res://assets/enemies/ant/ant_temp_sprite.png" id="2_g2wae"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_f1udd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+
+[node name="Roach" type="Area2D"]
+script = ExtResource("1_35c57")
+speed = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6uikl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_g2wae")
+
+[node name="HealthBar" parent="." instance=ExtResource("3_f1udd")]
+offset_left = -15.0
+offset_top = -23.0
+offset_right = 105.0
+offset_bottom = 4.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]

@@ -4,7 +4,7 @@ class_name HealthBar extends ProgressBar
 signal empty
 
 
-# Do `value` percentage points of damage to this health bar
+# Do `amount` points of damage to this health bar
 func damage(amount: float) -> void:
 	self.value -= amount
 
