@@ -1,4 +1,4 @@
-extends ProgressBar
+class_name HealthBar extends ProgressBar
 
 signal empty
 

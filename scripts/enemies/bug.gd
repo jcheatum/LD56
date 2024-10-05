@@ -1,8 +1,9 @@
 class_name Bug extends Area2D
 
-@export var navigator: NavigationAgent2D
+var navigator: NavigationAgent2D
 @export var speed: float = 70.0
 var velocity: Vector2 = Vector2.ZERO
+var health_bar: HealthBar
 
 func _physics_process(delta: float) -> void:
 	var direction = navigator.get_next_path_position() - global_position
@@ -15,4 +16,8 @@ func set_target(location: Vector2) -> void:
 
 
 func die() -> void:
-	self.free()
+	self.queue_free()
+
+
+func damage(value: float) -> void: 
+	health_bar.damage(value)
