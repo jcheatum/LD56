@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://iyrx32kbvvls"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_0x1q2"]
+[ext_resource type="Script" path="res://scripts/towers/tower_magnifying_glass.gd" id="2_gwejl"]
+[ext_resource type="Texture2D" uid="uid://diqgryivos03b" path="res://assets/game/towers/test_magnifying_glass.bmp" id="3_8sg8e"]
+
+[node name="Magnifying Glass" instance=ExtResource("1_0x1q2")]
+script = ExtResource("2_gwejl")
+ray_length = 300.0
+movable = true
+damage = 100.0
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_8sg8e")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="2"]
+position = Vector2(0, -46)
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="RayCast2D" index="0"]
+points = PackedVector2Array(0, 0, 0, 0)
