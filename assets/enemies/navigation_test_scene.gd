@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	$Ant.set_target($Target.position)
 	$Roach.set_target($Target.position)
+	$Fly.set_target($Target.position)
 
 var time = 0
 var do_damage = true

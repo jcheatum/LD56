@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyk41k8sq3gr6"]
+[gd_scene load_steps=6 format=3 uid="uid://dyk41k8sq3gr6"]
 
 [ext_resource type="Script" path="res://assets/enemies/navigation_test_scene.gd" id="1_0m5hh"]
 [ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="1_1qff8"]
 [ext_resource type="PackedScene" uid="uid://dhvwn0qshttyd" path="res://assets/enemies/roach/roach.tscn" id="3_752og"]
+[ext_resource type="PackedScene" uid="uid://bd3n2lt26gsao" path="res://assets/enemies/fly/fly.tscn" id="4_e5wgs"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_xmqjm"]
-vertices = PackedVector2Array(1644.82, 106.672, 1715.91, 104.328, 1709.07, 982.008, 1629.81, 901.898, 125.047, 984.977, 194.969, 916.102, 129.938, 111.344, 196.969, 113.648)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4, 5), PackedInt32Array(5, 4, 6, 7)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(120, 101, 115, 995, 1719, 992, 1726, 94, 1635, 97, 1620, 892, 205, 906, 207, 104)])
+vertices = PackedVector2Array(1576.07, 840.07, 1571.07, 139.32, 1707.11, 143.68, 1716.88, 974.938, 119.117, 966.047, 294.211, 830.93, 129.867, 111.406, 279.188, 117.602)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(120, 101, 109, 976, 1727, 985, 1717, 134, 1561, 129, 1566, 830, 304, 821, 289, 108)])
 
 [node name="NavigationTestScene" type="Node2D"]
 script = ExtResource("1_0m5hh")
@@ -16,13 +17,16 @@ script = ExtResource("1_0m5hh")
 navigation_polygon = SubResource("NavigationPolygon_xmqjm")
 
 [node name="Ant" parent="." instance=ExtResource("1_1qff8")]
-position = Vector2(145, 151)
+position = Vector2(158, 156)
 
 [node name="Roach" parent="." instance=ExtResource("3_752og")]
-position = Vector2(178, 151)
+position = Vector2(191, 153)
+
+[node name="Fly" parent="." instance=ExtResource("4_e5wgs")]
+position = Vector2(235, 156)
 
 [node name="Target" type="Node2D" parent="."]
-position = Vector2(1680, 154)
+position = Vector2(1635, 161)
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(90, 100, 87, 993, 1750, 1004, 1736, 114, 1622, 106, 1595, 868, 233, 872, 239, 93)
+points = PackedVector2Array(90, 100, 87, 993, 1750, 1004, 1736, 114, 1539, 103, 1532, 808, 325, 801, 316, 103)
