@@ -12,7 +12,7 @@ func _on_pause_menu_return_to_menu():
 	pass # Replace with function body.
 
 func start_game():
-	$SceneManager.change_scene("test_level")
+	$SceneManager.change_scene("level_1")
 	$SceneManager.return_to_menu.connect(return_to_menu)
 	
 func return_to_menu():

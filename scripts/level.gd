@@ -6,6 +6,8 @@ signal change_scene(scene_name)
 signal return_to_main_menu
 
 @export var initial_state: LevelState = LevelState.BUY
+@export var is_last_level: bool
+@export var next_level: String
 
 @onready var current_state: LevelState = initial_state
 
@@ -68,7 +70,8 @@ func change_state(new_state: LevelState):
 
 func BUY_ENTER():
 	$Market.enable_market = true
-	sun_angle = $WaveSpawner.waves[current_wave].sun_angle
+	if current_wave < $WaveSpawner.waves.size():
+		sun_angle = $WaveSpawner.waves[current_wave].sun_angle
 
 func BUY_UPDATE(delta):
 	pass
@@ -83,18 +86,22 @@ func DEFEND_UPDATE(delta):
 	pass
 
 func DEFEND_EXIT():
-	$Market.money += $WaveSpawner.waves[current_wave].reward_money
+	if current_wave < $WaveSpawner.waves.size():
+		$Market.money += $WaveSpawner.waves[current_wave].reward_money
 	current_wave += 1
 	
 	
 func WIN_ENTER():
-	return_to_main_menu.emit()
+	change_state(LevelState.BUY)
 
 func WIN_UPDATE(delta):
 	pass
 
 func WIN_EXIT():
-	change_scene.emit("test_level")
+	if is_last_level:
+		return_to_main_menu.emit()
+	else:
+		change_scene.emit(next_level)
 
 func FAIL_ENTER():
 	pass

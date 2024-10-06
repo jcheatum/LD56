@@ -7,7 +7,7 @@
 script = ExtResource("2_k2kio")
 on_timer = 0.0
 off_timer = 0.0
-damage = 10.0
+damage = 20.0
 
 [node name="Sprite2D" parent="Flame/FlameZone" index="1"]
 modulate = Color(0, 0, 1, 0.607843)
