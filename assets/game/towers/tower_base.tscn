@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="2_ecn7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3f6j1"]
-size = Vector2(96, 96)
+size = Vector2(112, 112)
 
 [node name="TowerBase" type="Area2D"]
 collision_layer = 5

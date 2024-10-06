@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bljbjnbm3lxcx"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_qp6gu"]
+[ext_resource type="Script" path="res://scripts/towers/tower_sugar.gd" id="2_y4tg8"]
+[ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_bu6mh"]
+[ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="3_qm075"]
+
+[node name="Sugar" instance=ExtResource("1_qp6gu")]
+script = ExtResource("2_y4tg8")
+placable_on_path = true
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.300322, 0.3)
+texture = ExtResource("3_qm075")
+
+[node name="HealthBar" parent="." index="3" instance=ExtResource("3_bu6mh")]
+offset_left = -15.0
+offset_top = -56.0
+offset_right = 105.0
+offset_bottom = -29.0
+
+[connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]

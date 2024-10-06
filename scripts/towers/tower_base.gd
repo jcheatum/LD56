@@ -65,7 +65,7 @@ func PLACING_ENTER():
 	
 func PLACING_UPDATE(_delta):
 	global_position = (get_global_mouse_position()/128 as Vector2i)*128 + Vector2i(64,64)
-	if Input.is_action_just_released("left_click") and in_bounds(global_position) and !has_overlapping_areas() and !has_overlapping_bodies():
+	if Input.is_action_just_released("left_click") and in_bounds(global_position) and !has_overlapping_areas() and (!has_overlapping_bodies() or placable_on_path):
 		if rotatable:
 			change_state(TowerState.ROTATING)
 		else:
