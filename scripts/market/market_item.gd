@@ -1,8 +1,10 @@
 class_name MarketItem extends Button
 
 @export var tower_path: String
+@export var tower_name: String
 @export var cost: int
 @export var sell_value: int
+@export var tower_desc: String
 
 @onready var tower_scene: Resource = load(tower_path)
 @onready var market: Market = $".."
@@ -24,3 +26,6 @@ func _on_place_tower():
 	
 func _on_pickup_tower():
 	market.enable_market = false
+
+func _on_mouse_entered() -> void:
+	market.show_tower_info(tower_name,cost,sell_value,tower_desc)

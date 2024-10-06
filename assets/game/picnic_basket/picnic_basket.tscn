@@ -1,17 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6yd50smba556"]
+[gd_scene load_steps=6 format=3 uid="uid://c6yd50smba556"]
 
 [ext_resource type="Texture2D" uid="uid://db33gxgpenegt" path="res://assets/sprites/environment/Basket.png" id="1_dov6q"]
 [ext_resource type="Script" path="res://scripts/picnic_basket.gd" id="1_kkvjl"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="2_ajklo"]
+[ext_resource type="Texture2D" uid="uid://8j387ejaerhj" path="res://assets/sprites/environment/Blanket.png" id="2_dgp6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7lax"]
-size = Vector2(172, 112)
+size = Vector2(112, 112)
 
 [node name="PicnicBasket" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_kkvjl")
 
+[node name="Blanket" type="Sprite2D" parent="."]
+rotation = -1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_dgp6t")
+region_enabled = true
+region_rect = Rect2(0, 0, 59.1171, 81.0181)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 texture = ExtResource("1_dov6q")
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -2,10 +2,10 @@ class_name TowerBase extends Area2D
 
 enum TowerState{PLACING,ROTATING,ACTIVE}
 
-const LeftBounds: float = 10
-const RightBounds: float = 1740
-const LowerBounds: float = 1200 #1070
-const UpperBounds: float = 10
+const LeftBounds: float = 0
+const RightBounds: float = 1640
+const LowerBounds: float = 1080 #1070
+const UpperBounds: float = 0
 
 signal sell_tower
 signal place_tower
@@ -18,6 +18,8 @@ signal pickup_tower
 @export var damage: float = 0
 
 @onready var current_state: TowerState = initial_state
+
+const tileSize: float = 120
 
 var aim_direction: Vector2 = Vector2.RIGHT
 
@@ -64,7 +66,7 @@ func PLACING_ENTER():
 	pickup_tower.emit()
 	
 func PLACING_UPDATE(_delta):
-	global_position = (get_global_mouse_position()/128 as Vector2i)*128 + Vector2i(64,64)
+	global_position = (get_global_mouse_position()/tileSize as Vector2i)*tileSize + Vector2(tileSize/2,tileSize/2)
 	if Input.is_action_just_released("left_click") and in_bounds(global_position) and !has_overlapping_areas() and (!has_overlapping_bodies() or placable_on_path):
 		if rotatable:
 			change_state(TowerState.ROTATING)
