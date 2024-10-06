@@ -104,4 +104,5 @@ theme_override_font_sizes/font_size = 32
 text = "Start
 Wave"
 
+[connection signal="dead" from="PicnicBasket" to="." method="_on_picnic_basket_dead"]
 [connection signal="pressed" from="StartWave" to="." method="_on_start_wave_pressed"]

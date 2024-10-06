@@ -1,6 +1,7 @@
 extends Node2D
 
 signal return_to_menu
+signal player_lost
 
 var scenes: Dictionary
 var active_scene: Node2D = null
@@ -18,6 +19,10 @@ func change_scene(scene_name: String):
 	active_scene = instance
 	active_scene.change_scene.connect(change_scene)
 	active_scene.return_to_main_menu.connect(return_to_main_menu)
+	active_scene.lose.connect(_on_active_scene_lose)
 	
 func return_to_main_menu():
 	return_to_menu.emit()
+
+func _on_active_scene_lose():
+	player_lost.emit()
