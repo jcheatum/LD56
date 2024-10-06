@@ -29,7 +29,12 @@ func swat():
 	#print("Swat!")
 	Smoke.visible = true
 	smoke_timer = 0.3
+	$AnimatedSprite2D.play()
 	if SwatZone.has_overlapping_areas():
 		for collider in SwatZone.get_overlapping_areas():
 			if collider != null and collider.has_method("damage"):
 				collider.damage(damage)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	$AnimatedSprite2D.frame = 0
