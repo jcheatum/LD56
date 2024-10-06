@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj14mat2jp8bm"]
+[gd_scene load_steps=5 format=3 uid="uid://prce53v0co5l"]
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_m1wb1"]
 [ext_resource type="Script" path="res://scripts/towers/tower_mirror.gd" id="2_bnsc3"]

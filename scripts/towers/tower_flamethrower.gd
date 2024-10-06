@@ -6,12 +6,15 @@ class_name Flamethrower extends TowerBase
 @onready var Flame: Node2D = $Flame
 @onready var FlameZone: Area2D = $Flame/FlameZone
 
+func _ready() -> void:
+	$Flame/FlameZone/AnimatedSprite2D.play()
+
 var timer: float = off_timer
 var is_flame_on: bool = false
 
 func _process(delta: float) -> void:
 	super._process(delta)
-	Flame.look_at(global_position+aim_direction)
+	self.look_at(global_position+aim_direction)
 
 func ACTIVE_ENTER():
 	timer = off_timer
