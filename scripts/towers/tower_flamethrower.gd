@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 func ACTIVE_ENTER():
 	timer = off_timer
+	flame_off()
 
 func ACTIVE_UPDATE(delta):
 	timer -= delta
