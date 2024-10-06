@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b74h1280dsrki"
-path="res://.godot/imported/Flame.png-0adbf78ca9df5d68dfec83d9db61fca5.ctex"
+uid="uid://bk1smasdxkhd1"
+path="res://.godot/imported/L5-Bug spray right.png-bbb2f7f7ddbd54a202765ee64eb70f04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/Flame.png"
-dest_files=["res://.godot/imported/Flame.png-0adbf78ca9df5d68dfec83d9db61fca5.ctex"]
+source_file="res://assets/sprites/towers/spray/L5-Bug spray right.png"
+dest_files=["res://.godot/imported/L5-Bug spray right.png-bbb2f7f7ddbd54a202765ee64eb70f04.ctex"]
 
 [params]
 
