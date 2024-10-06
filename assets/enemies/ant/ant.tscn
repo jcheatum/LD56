@@ -1,10 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://b45go3rn4wxs0"]
+[gd_scene load_steps=12 format=3 uid="uid://b45go3rn4wxs0"]
 
 [ext_resource type="Script" path="res://scripts/enemies/ant.gd" id="1_pol85"]
-[ext_resource type="Texture2D" uid="uid://t7rqvcryqrsi" path="res://assets/enemies/ant/ant_temp_sprite.png" id="2_p7o36"]
+[ext_resource type="Texture2D" uid="uid://bjnjov853ldbc" path="res://assets/sprites/enemies/ArmyAnt.png" id="2_pwe5a"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="2_so26o"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljtus"]
+radius = 8.94017
+height = 32.2388
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6munr"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioyv1"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru1an"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfkak"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w71xt"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8t7k"]
+atlas = ExtResource("2_pwe5a")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g32cm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6munr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioyv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru1an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfkak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w71xt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8t7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Ant" type="Area2D"]
 collision_layer = 3
@@ -12,11 +64,15 @@ collision_mask = 3
 script = ExtResource("1_pol85")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6uikl")
+position = Vector2(0, 3)
+rotation = -1.07687
+shape = SubResource("CapsuleShape2D_ljtus")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.11, 0.11)
-texture = ExtResource("2_p7o36")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(2.64143, -1.42226)
+rotation = 1.07687
+sprite_frames = SubResource("SpriteFrames_g32cm")
+frame_progress = 0.476395
 
 [node name="HealthBar" parent="." instance=ExtResource("2_so26o")]
 offset_left = -15.0
