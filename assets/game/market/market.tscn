@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
 [ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
 [ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_oolqe"]
-[ext_resource type="Texture2D" uid="uid://cp7cjufds6lya" path="res://assets/game/towers/test_flame.bmp" id="4_ktkfy"]
+[ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/Towers/Zippo.png" id="4_uhfrn"]
 [ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="5_5var4"]
 [ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="5_8rf20"]
 [ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="7_1egar"]
@@ -62,7 +62,7 @@ offset_left = 1815.0
 offset_top = 735.0
 offset_right = 1905.0
 offset_bottom = 825.0
-icon = ExtResource("4_ktkfy")
+icon = ExtResource("4_uhfrn")
 tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
 tower_name = "Lighter"
 cost = 36

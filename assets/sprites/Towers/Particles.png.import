@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buoqu1cwm31n5"
-path="res://.godot/imported/Particles.png-258a90aa40d4c96e9de5bfc39c6cfa8a.ctex"
+path="res://.godot/imported/Particles.png-3ca0a28d3f97d548de4a72acb6af5235.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/Particles.png"
-dest_files=["res://.godot/imported/Particles.png-258a90aa40d4c96e9de5bfc39c6cfa8a.ctex"]
+source_file="res://assets/sprites/Towers/Particles.png"
+dest_files=["res://.godot/imported/Particles.png-3ca0a28d3f97d548de4a72acb6af5235.ctex"]
 
 [params]
 
