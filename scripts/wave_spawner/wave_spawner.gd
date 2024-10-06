@@ -1,4 +1,4 @@
-class_name WaveSpawner extends Area2D
+class_name WaveSpawner extends Node2D
 
 class Wave:
 	var spawn_rate: float
@@ -8,8 +8,7 @@ signal wave_done
 
 @export var wave_file_path: String
 @export var enemy_data_path: String
-
-@onready var SpawnShape: CollisionShape2D = $SpawnShape
+@export var spawn_area: Vector2
 
 var waves: Array[Wave]
 var enemy_data: Dictionary
@@ -48,8 +47,8 @@ func spawn_bug():
 	var instance = scene.instantiate() as Bug
 	instance.bug_died.connect(_on_bug_death)
 	instance.global_position = global_position
-	instance.global_position.x += randf_range(-SpawnShape.shape.size.x/2, SpawnShape.shape.size.x/2)
-	instance.global_position.y += randf_range(-SpawnShape.shape.size.y/2, SpawnShape.shape.size.y/2)
+	instance.global_position.x += randf_range(-spawn_area.x, spawn_area.x)
+	instance.global_position.y += randf_range(-spawn_area.y, spawn_area.y)
 	add_sibling(instance)
 	await instance.ready
 	instance.set_target($"../Target".position)
