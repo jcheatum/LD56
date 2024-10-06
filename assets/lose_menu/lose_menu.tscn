@@ -49,4 +49,5 @@ focus_neighbor_bottom = NodePath("../Retry")
 theme_override_font_sizes/font_size = 60
 text = "Main Menu"
 
+[connection signal="pressed" from="ButtonsContainer/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Exit" to="." method="_on_exit_pressed"]

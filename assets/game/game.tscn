@@ -15,3 +15,4 @@ visible = false
 
 [connection signal="player_lost" from="SceneManager" to="." method="_on_scene_manager_player_lost"]
 [connection signal="exit" from="LoseMenu" to="." method="_on_lose_menu_exit"]
+[connection signal="retry" from="LoseMenu" to="." method="_on_lose_menu_retry"]

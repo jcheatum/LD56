@@ -3,6 +3,8 @@ extends Node2D
 signal finished
 signal paused
 
+var current_level: String
+
 func _input(event):
 	if self.visible && event.is_action_pressed("pause"):
 		paused.emit()
@@ -12,7 +14,8 @@ func _on_pause_menu_return_to_menu():
 	pass # Replace with function body.
 
 func start_game():
-	$SceneManager.change_scene("test_level")
+	current_level = "test_level"
+	$SceneManager.change_scene(current_level)
 	$SceneManager.return_to_menu.connect(return_to_menu)
 	
 func return_to_menu():
@@ -27,3 +30,7 @@ func _on_lose_menu_exit() -> void:
 func _on_scene_manager_player_lost() -> void:
 	get_tree().paused = true
 	$LoseMenu.show()
+
+
+func _on_lose_menu_retry() -> void:
+	$SceneManager.change_scene(current_level)
