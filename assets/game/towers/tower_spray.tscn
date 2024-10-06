@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccsrxmkeph27h"]
+[gd_scene load_steps=3 format=3 uid="uid://dfu2menwyv1et"]
 
-[ext_resource type="PackedScene" uid="uid://cbsivqvqcxosi" path="res://assets/game/towers/tower_flamethrower.tscn" id="1_lgknb"]
+[ext_resource type="PackedScene" uid="uid://cllnb76d6v0cx" path="res://assets/game/towers/tower_flamethrower.tscn" id="1_lgknb"]
 [ext_resource type="Script" path="res://scripts/towers/tower_spray.gd" id="2_k2kio"]
 
 [node name="Spray" instance=ExtResource("1_lgknb")]
@@ -8,6 +8,3 @@ script = ExtResource("2_k2kio")
 on_timer = 0.0
 off_timer = 0.0
 damage = 20.0
-
-[node name="Sprite2D" parent="Flame/FlameZone" index="1"]
-modulate = Color(0, 0, 1, 0.607843)

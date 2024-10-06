@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_k3mb8"]
 [ext_resource type="Script" path="res://scripts/towers/tower_flamethrower.gd" id="2_k24ie"]
-[ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/Towers/Zippo.png" id="3_1a2lq"]
-[ext_resource type="Texture2D" uid="uid://b74h1280dsrki" path="res://assets/sprites/Towers/Flame.png" id="4_hpdp6"]
+[ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="3_1a2lq"]
+[ext_resource type="Texture2D" uid="uid://b74h1280dsrki" path="res://assets/sprites/towers/Flame.png" id="4_hpdp6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vl2mh"]
 radius = 59.3043

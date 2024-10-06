@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/towers/tower_sugar.gd" id="2_y4tg8"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_bu6mh"]
 [ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="3_qm075"]
-[ext_resource type="Texture2D" uid="uid://qjr0dblf0vlc" path="res://assets/sprites/Towers/Sugar Cube.png" id="4_1n15k"]
+[ext_resource type="Texture2D" uid="uid://qjr0dblf0vlc" path="res://assets/sprites/towers/Sugar Cube.png" id="4_1n15k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ks2j3"]
 atlas = ExtResource("4_1n15k")
