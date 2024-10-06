@@ -24,6 +24,7 @@ script = ExtResource("1_yws1m")
 
 [node name="WaveSpawner" parent="." instance=ExtResource("2_olbxr")]
 position = Vector2(125, 943)
+spawn_area = Vector2(80, 59)
 
 [node name="Fly Swatter" parent="." instance=ExtResource("3_tx3a5")]
 position = Vector2(19, 934)

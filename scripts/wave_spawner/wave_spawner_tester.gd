@@ -2,7 +2,7 @@ extends Node
 
 #just for testing purposes
 
-@onready var spawner: Area2D = $"../WaveSpawner"
+@onready var spawner: Node2D = $"../WaveSpawner"
 
 var wave_num: int = 0
 
