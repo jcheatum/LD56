@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgmfwrdnu35nr"]
+[gd_scene load_steps=7 format=3 uid="uid://cgmfwrdnu35nr"]
 
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
 [ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
 [ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_oolqe"]
 [ext_resource type="Texture2D" uid="uid://cp7cjufds6lya" path="res://assets/game/towers/test_flame.bmp" id="4_ktkfy"]
+[ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="5_5var4"]
 [ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="5_8rf20"]
 
 [node name="Market" type="Control"]
@@ -69,3 +70,14 @@ offset_right = 1904.0
 offset_bottom = 608.0
 icon = ExtResource("5_8rf20")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
+
+[node name="MarketItem_Mirror" parent="." instance=ExtResource("2_pwd30")]
+layout_mode = 0
+offset_left = 1808.0
+offset_top = 400.0
+offset_right = 1904.0
+offset_bottom = 496.0
+icon = ExtResource("5_5var4")
+tower_path = "res://assets/game/towers/tower_mirror.tscn"
+cost = 2
+sell_value = 1

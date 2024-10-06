@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj14mat2jp8bm"]
+
+[ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_m1wb1"]
+[ext_resource type="Script" path="res://scripts/towers/tower_mirror.gd" id="2_bnsc3"]
+[ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="3_ogs1p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7t8t2"]
+size = Vector2(24, 17.0959)
+
+[node name="Mirror" instance=ExtResource("1_m1wb1")]
+script = ExtResource("2_bnsc3")
+ray_length = 2203.0
+max_bounces = 10
+rotatable = true
+damage = 100.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = null
+
+[node name="Reflector" type="Area2D" parent="." index="3"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reflector" index="0"]
+position = Vector2(-8, -1.20797e-06)
+rotation = -3.14159
+scale = Vector2(0.666667, -7.48718)
+shape = SubResource("RectangleShape2D_7t8t2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Reflector" index="1"]
+position = Vector2(-8, 0)
+scale = Vector2(0.128706, 1)
+texture = ExtResource("3_ogs1p")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+position = Vector2(0, -46)
+collision_mask = 10
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="RayCast2D" index="0"]
+points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(1, 1, 0.607843, 0.607843)

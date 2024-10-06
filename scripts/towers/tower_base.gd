@@ -4,7 +4,7 @@ enum TowerState{PLACING,ROTATING,ACTIVE}
 
 const LeftBounds: float = 10
 const RightBounds: float = 1740
-const LowerBounds: float = 1070
+const LowerBounds: float = 1200 #1070
 const UpperBounds: float = 10
 
 signal sell_tower
