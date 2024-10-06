@@ -1,9 +1,53 @@
-[gd_scene load_steps=6 format=3 uid="uid://vytgk24hnpyn"]
+[gd_scene load_steps=13 format=3 uid="uid://cir45ccvk4qka"]
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_qk1or"]
 [ext_resource type="Script" path="res://scripts/towers/tower_fly_swatter.gd" id="2_4io40"]
 [ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_q4b80"]
 [ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="4_nf2te"]
+[ext_resource type="Texture2D" uid="uid://c30riukrfv46a" path="res://assets/sprites/Towers/Swatter.png" id="4_nmxh2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlfxv"]
+atlas = ExtResource("4_nmxh2")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nqgj"]
+atlas = ExtResource("4_nmxh2")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_varhk"]
+atlas = ExtResource("4_nmxh2")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0i8d"]
+atlas = ExtResource("4_nmxh2")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hkef"]
+atlas = ExtResource("4_nmxh2")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0blej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlfxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nqgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_varhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0i8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hkef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1cyq6"]
 radius = 59.3043
@@ -15,10 +59,15 @@ rotatable = true
 damage = 20.0
 
 [node name="Sprite2D" parent="." index="0"]
+visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_q4b80")
 
-[node name="Swatter" type="Node2D" parent="." index="2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0blej")
+
+[node name="Swatter" type="Node2D" parent="." index="3"]
 
 [node name="SwatZone" type="Area2D" parent="Swatter" index="0"]
 position = Vector2(127, 0)
