@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://chm2821rroie0" path="res://assets/sprites/enemies/ManlyBug.png" id="2_be3tt"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_ot80v"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 10.5551
-height = 28.3935
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7vqu0"]
 atlas = ExtResource("2_be3tt")
 region = Rect2(0, 0, 32, 32)
@@ -58,22 +54,25 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+radius = 10.5551
+height = 28.3935
+
 [node name="Ladybug" type="Area2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_wev5w")
 speed = 50.0
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, -1.2517e-06)
+sprite_frames = SubResource("SpriteFrames_2t8ey")
+frame_progress = 0.396816
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -1.19209e-07)
 rotation = -0.837758
 shape = SubResource("CapsuleShape2D_6uikl")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-1.33826, -1.48629)
-rotation = 0.837758
-sprite_frames = SubResource("SpriteFrames_2t8ey")
-frame_progress = 0.396816
 
 [node name="HealthBar" parent="." instance=ExtResource("3_ot80v")]
 offset_left = -15.0

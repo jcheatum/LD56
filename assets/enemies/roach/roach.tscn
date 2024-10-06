@@ -12,14 +12,13 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_35c57")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_auq7h")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_6uikl")
-
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(0, -3)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("2_auq7h")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f1udd")]
 offset_left = -15.0

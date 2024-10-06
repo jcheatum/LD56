@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cllnb76d6v0cx"]
+[gd_scene load_steps=5 format=3 uid="uid://cbsivqvqcxosi"]
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_k3mb8"]
 [ext_resource type="Script" path="res://scripts/towers/tower_flamethrower.gd" id="2_k24ie"]
