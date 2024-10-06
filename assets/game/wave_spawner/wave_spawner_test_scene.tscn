@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://drt38pwirdtxg"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_spawner_tester.gd" id="1_yws1m"]
+[ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="2_olbxr"]
+[ext_resource type="PackedScene" uid="uid://vytgk24hnpyn" path="res://assets/game/towers/tower_fly_swatter.tscn" id="3_tx3a5"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vvpe0"]
+resource_local_to_scene = true
+vertices = PackedVector2Array(34.0938, 990.938, 24.9922, 894.969, 1647.47, 891.977, 1719.78, 980.063, 1712.21, 626.148, 1639.55, 719.953, 167.32, 650.148, 41.9219, 727.953, 39.0703, 338.633, 160.102, 422.188, 167.18, 333.992, 167.188, 334, 1750, 380.25, 1750, 303.188)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(6, 4, 5, 7), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 8, 10, 11), PackedInt32Array(12, 9, 11, 13)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(25, 1001, 1730, 990, 1722, 616, 177, 640, 170.415, 431.921, 1760, 390, 1760, 293, 167, 324, 29, 329, 32, 738, 1630, 730, 1637, 882, 14, 885)])
+
+[node name="WaveSpawnerTestScene" type="Node2D"]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_vvpe0")
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(1692, 340)
+
+[node name="WaveSpawnerTester" type="Node" parent="."]
+script = ExtResource("1_yws1m")
+
+[node name="WaveSpawner" parent="." instance=ExtResource("2_olbxr")]
+position = Vector2(125, 943)
+
+[node name="Fly Swatter" parent="." instance=ExtResource("3_tx3a5")]
+position = Vector2(19, 934)
+damage = 40.0
