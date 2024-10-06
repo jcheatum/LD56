@@ -12,6 +12,8 @@ signal wave_done
 @export var enemy_data_path: String
 @export var spawn_area: Vector2
 
+@onready var spawn_points: Array[Node] = get_children()
+
 var waves: Array[Wave]
 var enemy_data: Dictionary
 var bug_queue: Array[String]
@@ -43,15 +45,21 @@ func start_wave(wave: int):
 func spawn_bug():
 	enemy_count += 1
 	print("Spawning... " + bug_queue[0])
+	
+	# Load and Instantiate
 	var scene = load(enemy_data[bug_queue[0]])
 	bug_queue.pop_front()
 	var instance = scene.instantiate() as Bug
 	instance.bug_died.connect(_on_bug_death)
-	instance.global_position = global_position
-	instance.global_position.x += randf_range(-spawn_area.x, spawn_area.x)
-	instance.global_position.y += randf_range(-spawn_area.y, spawn_area.y)
 	add_sibling(instance)
 	instance.set_target($"../Target".position)
+	
+	# Position
+	assert(spawn_points.size() > 0, "No Spawn Points are set!")
+	var spawnPoint: Node2D = spawn_points[randi() % spawn_points.size()]
+	instance.global_position = spawnPoint.global_position
+	instance.global_position.x += randf_range(-48, 48)
+	instance.global_position.y += randf_range(-48, 48)
 	
 func _on_bug_death():
 	enemy_count -= 1
