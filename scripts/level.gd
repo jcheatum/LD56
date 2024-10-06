@@ -17,6 +17,7 @@ var current_wave: int = 0
 
 func _ready():
 	$WaveSpawner.wave_done.connect(wave_done)
+	$PicnicBasket.dead.connect(_on_picnic_basket_dead)
 	match current_state:
 		LevelState.BUY:
 			BUY_ENTER()
