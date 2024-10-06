@@ -14,5 +14,6 @@ script = ExtResource("2_78b6v")
 visible = false
 
 [connection signal="player_lost" from="SceneManager" to="." method="_on_scene_manager_player_lost"]
+[connection signal="scene_changed" from="SceneManager" to="." method="_on_scene_manager_scene_changed"]
 [connection signal="exit" from="LoseMenu" to="." method="_on_lose_menu_exit"]
 [connection signal="retry" from="LoseMenu" to="." method="_on_lose_menu_retry"]
