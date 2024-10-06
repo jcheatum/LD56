@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chax0jkjgva83"
-path="res://.godot/imported/Onomatopoeia.png-36ad3c1ea8ad9a0b2ebe423eaca35f03.ctex"
+uid="uid://b1m1264ujmcb3"
+path="res://.godot/imported/Zippo.png-9c51a7a346f077ca0d27b88a3d19e1b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/Onomatopoeia.png"
-dest_files=["res://.godot/imported/Onomatopoeia.png-36ad3c1ea8ad9a0b2ebe423eaca35f03.ctex"]
+source_file="res://assets/sprites/towers/Zippo.png"
+dest_files=["res://.godot/imported/Zippo.png-9c51a7a346f077ca0d27b88a3d19e1b8.ctex"]
 
 [params]
 

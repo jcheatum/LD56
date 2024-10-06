@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk1smasdxkhd1"
-path="res://.godot/imported/L5-Bug spray right.png-97d589a81a388c3728b140c439e1bad8.ctex"
+uid="uid://1lv8gaa2as1h"
+path="res://.godot/imported/sugar_cube_icon.png-1fe984dd0ed468aae24b7fb96bfb3d24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/spray/L5-Bug spray right.png"
-dest_files=["res://.godot/imported/L5-Bug spray right.png-97d589a81a388c3728b140c439e1bad8.ctex"]
+source_file="res://assets/sprites/towers/sugar_cube_icon.png"
+dest_files=["res://.godot/imported/sugar_cube_icon.png-1fe984dd0ed468aae24b7fb96bfb3d24.ctex"]
 
 [params]
 
