@@ -2,9 +2,16 @@ class_name TowerBase extends Area2D
 
 enum TowerState{PLACING,ROTATING,ACTIVE}
 
+const LeftBounds: float = 10
+const RightBounds: float = 1740
+const LowerBounds: float = 1070
+const UpperBounds: float = 10
+
+signal sell_tower
+
 @export var rotatable: bool
 @export var movable: bool
-@export var initial_state: TowerState = TowerState.ACTIVE
+@export var initial_state: TowerState = TowerState.PLACING
 @export var damage: float = 0
 
 @onready var current_state: TowerState = initial_state
@@ -55,7 +62,7 @@ func PLACING_ENTER():
 	
 func PLACING_UPDATE(_delta):
 	global_position = get_global_mouse_position()
-	if Input.is_action_just_released("left_click"):
+	if Input.is_action_just_released("left_click") and in_bounds(global_position):
 		if rotatable:
 			change_state(TowerState.ROTATING)
 		else:
@@ -65,15 +72,17 @@ func PLACING_EXIT():
 	pass
 	
 func ROTATING_ENTER():
-	pass
+	$Line2D.visible = true
 	
 func ROTATING_UPDATE(_delta):
 	aim_direction = (get_global_mouse_position() - global_position).normalized()
 	if Input.is_action_just_pressed("left_click"):
 			change_state(TowerState.ACTIVE)
+	$Line2D.points[1] = aim_direction*200
 	
 func ROTATING_EXIT():
 	print("Aim Direction: " + str(aim_direction))
+	$Line2D.visible = false
 
 func ACTIVE_ENTER():
 	pass
@@ -89,4 +98,21 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 		if movable:
 			change_state(TowerState.PLACING)
 		elif rotatable:
-			change_state(TowerState.ROTATING)
+			pass
+			#change_state(TowerState.ROTATING)
+	elif Input.is_action_just_pressed("right_click") and current_state==TowerState.ACTIVE:
+		sell_tower.emit()
+		self.queue_free()
+
+func in_bounds(pos: Vector2) -> bool:
+	if pos.x > RightBounds:
+		return false
+	elif pos.x < LeftBounds:
+		return false
+	elif pos.y > LowerBounds:
+		return false
+	elif pos.y < UpperBounds:
+		return false
+	else:
+		return true
+	

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl31w8ioka2uy"]
+
+[ext_resource type="Texture2D" uid="uid://diqgryivos03b" path="res://assets/game/towers/test_magnifying_glass.bmp" id="1_wsm6f"]
+[ext_resource type="Script" path="res://scripts/market/market_item.gd" id="2_51nvu"]
+
+[node name="MarketItem_MagnifyingGlass" type="Button"]
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("1_wsm6f")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_51nvu")
+tower_path = "res://assets/game/towers/tower_magnifying_glass.tscn"
+cost = 12
+sell_value = 6
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

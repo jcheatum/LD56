@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgmfwrdnu35nr"]
+
+[ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
+[ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
+[ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_oolqe"]
+[ext_resource type="Texture2D" uid="uid://cp7cjufds6lya" path="res://assets/game/towers/test_flame.bmp" id="4_ktkfy"]
+
+[node name="Market" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_iqbx2")
+initial_money = 100
+enable_market = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1750.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="MarketItem_MagnifyingGlass" parent="." instance=ExtResource("2_pwd30")]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 920.0
+offset_right = 1904.0
+offset_bottom = 1056.0
+
+[node name="MoneyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1753.0
+offset_top = 2.0
+offset_right = 1917.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 64
+text = "$$$$"
+horizontal_alignment = 1
+
+[node name="MarketItem_MagnifyingGlass2" parent="." instance=ExtResource("2_pwd30")]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 760.0
+offset_right = 1904.0
+offset_bottom = 896.0
+icon = ExtResource("3_oolqe")
+tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
+
+[node name="MarketItem_MagnifyingGlass3" parent="." instance=ExtResource("2_pwd30")]
+layout_mode = 0
+offset_left = 1768.0
+offset_top = 600.0
+offset_right = 1904.0
+offset_bottom = 736.0
+icon = ExtResource("4_ktkfy")
+tower_path = "res://assets/game/towers/tower_flamethrower.tscn"

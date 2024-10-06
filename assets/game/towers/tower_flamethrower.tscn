@@ -15,7 +15,6 @@ rotatable = true
 damage = 100.0
 
 [node name="Flame" type="Node2D" parent="." index="2"]
-visible = false
 rotation = 1.5708
 
 [node name="FlameZone" type="Area2D" parent="Flame" index="0"]
