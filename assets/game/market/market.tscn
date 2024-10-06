@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="4_uhfrn"]
 [ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="5_5var4"]
 [ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
-[ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="7_1egar"]
+[ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
 
 [node name="Market" type="Control"]
 layout_mode = 3
@@ -103,7 +103,7 @@ offset_left = 1815.0
 offset_top = 615.0
 offset_right = 1905.0
 offset_bottom = 705.0
-icon = ExtResource("7_1egar")
+icon = ExtResource("8_f5t8j")
 tower_path = "res://assets/game/towers/tower_spray.tscn"
 tower_name = "Bug Spray"
 tower_desc = "Shoots bug spray on the ground, dealing damage to bugs that pass over."
