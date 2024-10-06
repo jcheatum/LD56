@@ -1,10 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://g6beos44pbpw"]
+[gd_scene load_steps=12 format=3 uid="uid://g6beos44pbpw"]
 
 [ext_resource type="Script" path="res://scripts/enemies/bee.gd" id="1_olxv6"]
-[ext_resource type="Texture2D" uid="uid://55g28k7c40fn" path="res://assets/enemies/bee/bee_temp_sprite.png" id="2_bl8y5"]
+[ext_resource type="Texture2D" uid="uid://ccr3nupfvtdts" path="res://assets/sprites/enemies/BumbleBee.png" id="2_rl3tx"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_788mu"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkdq5"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwa5f"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvbn0"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbljf"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81c2s"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duno1"]
+atlas = ExtResource("2_rl3tx")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_huio1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkdq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwa5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvbn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbljf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81c2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duno1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+radius = 9.2168
+height = 31.0701
 
 [node name="Bee" type="Area2D"]
 collision_layer = 3
@@ -12,12 +64,15 @@ collision_mask = 3
 script = ExtResource("1_olxv6")
 speed = 100.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_6uikl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 7.15256e-07)
+sprite_frames = SubResource("SpriteFrames_huio1")
+frame_progress = 0.107859
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("2_bl8y5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+rotation = -0.785398
+shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_788mu")]
 offset_left = -15.0
