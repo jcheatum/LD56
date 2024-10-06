@@ -20,7 +20,8 @@ func return_to_menu():
 
 
 func _on_lose_menu_exit() -> void:
-	return_to_menu()
+	get_tree().paused = false
+	finished.emit()
 
 
 func _on_scene_manager_player_lost() -> void:
