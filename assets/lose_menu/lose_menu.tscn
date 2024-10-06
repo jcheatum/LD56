@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://b37fnxin6vqiw"]
+
+[ext_resource type="Script" path="res://scripts/lose_menu.gd" id="1_lxw27"]
+
+[node name="LoseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxw27")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 72.0
+offset_right = 1529.0
+offset_bottom = 572.0
+theme_override_font_sizes/font_size = 120
+text = "Oh no! The bugs ate all of your food!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ButtonsContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 532.0
+offset_right = 1280.0
+offset_bottom = 852.0
+
+[node name="Retry" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+theme_override_font_sizes/font_size = 60
+text = "Try Again?"
+
+[node name="Exit" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Retry")
+focus_neighbor_bottom = NodePath("../Retry")
+theme_override_font_sizes/font_size = 60
+text = "Main Menu"
+
+[connection signal="pressed" from="ButtonsContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Exit" to="." method="_on_exit_pressed"]

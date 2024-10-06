@@ -22,7 +22,7 @@ func _on_settings_menu_done():
 
 func _on_game_finished():
 	$Game.hide()
-	$Credits.show()
+	$MainMenu.show()
 
 
 func _on_settings_menu_music_vol_set(volume):
