@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cxnjy0n68866l"]
+
+[ext_resource type="Texture2D" uid="uid://qjr0dblf0vlc" path="res://assets/sprites/Towers/Sugar Cube.png" id="1_1xg6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks2j3"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwtxk"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kujug"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njkq5"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyycj"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2og5"]
+atlas = ExtResource("1_1xg6a")
+region = Rect2(48, 24, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks2j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwtxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kujug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njkq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyycj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2og5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

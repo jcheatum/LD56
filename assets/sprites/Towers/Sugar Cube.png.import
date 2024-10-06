@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qjr0dblf0vlc"
-path="res://.godot/imported/Sugar Cube.png-a20f7d150667a787d128791b083d2e21.ctex"
+path="res://.godot/imported/Sugar Cube.png-248241181461cd735beaeafe291b331f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/Sugar Cube.png"
-dest_files=["res://.godot/imported/Sugar Cube.png-a20f7d150667a787d128791b083d2e21.ctex"]
+source_file="res://assets/sprites/Towers/Sugar Cube.png"
+dest_files=["res://.godot/imported/Sugar Cube.png-248241181461cd735beaeafe291b331f.ctex"]
 
 [params]
 

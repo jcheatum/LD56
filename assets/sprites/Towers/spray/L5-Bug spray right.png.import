@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bk1smasdxkhd1"
-path="res://.godot/imported/L5-Bug spray right.png-bbb2f7f7ddbd54a202765ee64eb70f04.ctex"
+path="res://.godot/imported/L5-Bug spray right.png-97d589a81a388c3728b140c439e1bad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/spray/L5-Bug spray right.png"
-dest_files=["res://.godot/imported/L5-Bug spray right.png-bbb2f7f7ddbd54a202765ee64eb70f04.ctex"]
+source_file="res://assets/sprites/Towers/spray/L5-Bug spray right.png"
+dest_files=["res://.godot/imported/L5-Bug spray right.png-97d589a81a388c3728b140c439e1bad8.ctex"]
 
 [params]
 

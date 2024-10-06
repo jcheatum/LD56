@@ -1,19 +1,76 @@
-[gd_scene load_steps=5 format=3 uid="uid://bljbjnbm3lxcx"]
+[gd_scene load_steps=13 format=3 uid="uid://b0hweyli0nmdg"]
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_qp6gu"]
 [ext_resource type="Script" path="res://scripts/towers/tower_sugar.gd" id="2_y4tg8"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_bu6mh"]
 [ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="3_qm075"]
+[ext_resource type="Texture2D" uid="uid://qjr0dblf0vlc" path="res://assets/sprites/Towers/Sugar Cube.png" id="4_1n15k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks2j3"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwtxk"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kujug"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njkq5"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyycj"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2og5"]
+atlas = ExtResource("4_1n15k")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sg8em"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks2j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwtxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kujug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njkq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyycj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2og5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Sugar" instance=ExtResource("1_qp6gu")]
 script = ExtResource("2_y4tg8")
 placable_on_path = true
 
 [node name="Sprite2D" parent="." index="0"]
+visible = false
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_qm075")
 
-[node name="HealthBar" parent="." index="3" instance=ExtResource("3_bu6mh")]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_sg8em")
+
+[node name="HealthBar" parent="." index="4" instance=ExtResource("3_bu6mh")]
+visible = false
 offset_left = -15.0
 offset_top = -56.0
 offset_right = 105.0
