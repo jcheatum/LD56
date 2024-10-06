@@ -4,6 +4,7 @@ enum LevelState{BUY,DEFEND,WIN,FAIL}
 
 signal change_scene(scene_name)
 signal return_to_main_menu
+signal lose
 
 @export var initial_state: LevelState = LevelState.BUY
 
@@ -108,3 +109,7 @@ func FAIL_EXIT():
 func _on_start_wave_pressed() -> void:
 	if current_state == LevelState.BUY and $Market.enable_market == true:
 		change_state(LevelState.DEFEND)
+
+
+func _on_picnic_basket_dead() -> void:
+	lose.emit()

@@ -12,3 +12,6 @@ script = ExtResource("2_78b6v")
 
 [node name="LoseMenu" parent="." instance=ExtResource("3_h3yvm")]
 visible = false
+
+[connection signal="player_lost" from="SceneManager" to="." method="_on_scene_manager_player_lost"]
+[connection signal="exit" from="LoseMenu" to="." method="_on_lose_menu_exit"]
