@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_f1udd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-height = 39.57
+radius = 25.0
+height = 122.0
 
 [node name="Roach" type="Area2D"]
 collision_layer = 3
@@ -13,18 +14,18 @@ collision_mask = 3
 script = ExtResource("1_35c57")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.07, 0.07)
+scale = Vector2(0.263, 0.263)
 texture = ExtResource("2_auq7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(2, 18)
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f1udd")]
 offset_left = -15.0
-offset_top = -23.0
+offset_top = -76.0
 offset_right = 105.0
-offset_bottom = 4.0
+offset_bottom = -49.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

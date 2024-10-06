@@ -55,8 +55,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 9.2168
-height = 31.0701
+radius = 31.1127
+height = 108.894
 
 [node name="Bee" type="Area2D"]
 collision_layer = 3
@@ -65,20 +65,22 @@ script = ExtResource("1_olxv6")
 speed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, 7.15256e-07)
+scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_huio1")
 frame_progress = 0.107859
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 1)
+position = Vector2(-6, 3)
 rotation = -0.785398
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_788mu")]
 offset_left = -15.0
-offset_top = -23.0
+offset_top = -59.0
 offset_right = 105.0
-offset_bottom = 4.0
+offset_bottom = -32.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

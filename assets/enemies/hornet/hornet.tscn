@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_f6xfa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
+height = 80.0
 
 [node name="Hornet" type="Area2D"]
 collision_layer = 3
@@ -13,7 +14,7 @@ script = ExtResource("1_7efjj")
 speed = 120.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.563, 0.563)
 texture = ExtResource("2_x5f01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -21,9 +22,9 @@ shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f6xfa")]
 offset_left = -15.0
-offset_top = -23.0
+offset_top = -58.0
 offset_right = 105.0
-offset_bottom = 4.0
+offset_bottom = -31.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
