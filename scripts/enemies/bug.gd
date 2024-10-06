@@ -1,8 +1,10 @@
 class_name Bug extends Area2D
 
+signal bug_died
+
 @export var speed: float = 70.0
 var navigator: NavigationAgent2D
-var velocity: Vector2 = Vector2.ZERO
+@onready var velocity: Vector2 = Vector2.ZERO
 var health_bar: HealthBar
 var rotation_container
 
@@ -22,8 +24,8 @@ func set_target(location: Vector2) -> void:
 
 # Pretty self explanitory
 func die() -> void:
+	bug_died.emit()
 	self.queue_free()
-
 
 # Do `value` points of damage to this bug
 func damage(value: float) -> void: 

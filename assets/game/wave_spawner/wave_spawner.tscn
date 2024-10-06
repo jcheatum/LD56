@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b18d6154x2hk"]
+
+[ext_resource type="Script" path="res://scripts/wave_spawner/wave_spawner.gd" id="1_2qm8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgtue"]
+size = Vector2(45, 91)
+
+[node name="WaveSpawner" type="Area2D"]
+position = Vector2(77, 943)
+script = ExtResource("1_2qm8x")
+wave_file_path = "res://test_waves.cfg"
+enemy_data_path = "res://enemy_data.cfg"
+
+[node name="SpawnShape" type="CollisionShape2D" parent="."]
+position = Vector2(-12.5, -0.5)
+shape = SubResource("RectangleShape2D_mgtue")

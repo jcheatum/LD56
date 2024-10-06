@@ -26,7 +26,7 @@ func ACTIVE_UPDATE(delta):
 		Smoke.visible = false
 		
 func swat():
-	print("Swat!")
+	#print("Swat!")
 	Smoke.visible = true
 	smoke_timer = 0.3
 	if SwatZone.has_overlapping_areas():
