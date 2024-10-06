@@ -28,6 +28,8 @@ spawn_area = Vector2(80, 59)
 
 [node name="Fly Swatter" parent="." instance=ExtResource("3_tx3a5")]
 position = Vector2(19, 934)
+collision_layer = 1
+collision_mask = 1
 initial_state = 2
 damage = 40.0
 

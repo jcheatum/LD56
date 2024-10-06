@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://scripts/market/market_item.gd" id="2_51nvu"]
 
 [node name="MarketItem_MagnifyingGlass" type="Button"]
-offset_right = 136.0
-offset_bottom = 136.0
+offset_right = 96.0
+offset_bottom = 96.0
 icon = ExtResource("1_wsm6f")
 icon_alignment = 1
 expand_icon = true
