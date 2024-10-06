@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djn7x8tt3bsr3" path="res://assets/game/towers/tower_base.tscn" id="1_0x1q2"]
 [ext_resource type="Script" path="res://scripts/towers/tower_magnifying_glass.gd" id="2_gwejl"]
-[ext_resource type="Texture2D" uid="uid://c8s1pmyikcjm" path="res://assets/sprites/Towers/Magnifying Glass.png" id="3_f8g07"]
+[ext_resource type="Texture2D" uid="uid://c8s1pmyikcjm" path="res://assets/sprites/towers/Magnifying Glass.png" id="3_f8g07"]
 
 [node name="Magnifying Glass" instance=ExtResource("1_0x1q2")]
 script = ExtResource("2_gwejl")

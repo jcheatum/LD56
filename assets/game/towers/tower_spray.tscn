@@ -1,7 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://ccsrxmkeph27h"]
+[gd_scene load_steps=7 format=3 uid="uid://dfu2menwyv1et"]
 
-[ext_resource type="PackedScene" uid="uid://cbsivqvqcxosi" path="res://assets/game/towers/tower_flamethrower.tscn" id="1_lgknb"]
+[ext_resource type="PackedScene" uid="uid://cllnb76d6v0cx" path="res://assets/game/towers/tower_flamethrower.tscn" id="1_lgknb"]
 [ext_resource type="Script" path="res://scripts/towers/tower_spray.gd" id="2_k2kio"]
+[ext_resource type="Texture2D" uid="uid://bk1smasdxkhd1" path="res://assets/sprites/towers/spray/L5-Bug spray right.png" id="3_7s7p8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvi62"]
+atlas = ExtResource("3_7s7p8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjy7m"]
+atlas = ExtResource("3_7s7p8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_synso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvi62")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjy7m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Spray" instance=ExtResource("1_lgknb")]
 script = ExtResource("2_k2kio")
@@ -9,5 +32,14 @@ on_timer = 0.0
 off_timer = 0.0
 damage = 20.0
 
-[node name="Sprite2D" parent="Flame/FlameZone" index="1"]
-modulate = Color(0, 0, 1, 0.607843)
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_synso")
+
+[node name="AnimatedSprite2D" parent="Flame/FlameZone" index="1"]
+visible = false
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

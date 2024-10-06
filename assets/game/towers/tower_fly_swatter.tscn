@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/towers/tower_fly_swatter.gd" id="2_4io40"]
 [ext_resource type="Texture2D" uid="uid://bafvpgcscn6x4" path="res://assets/game/towers/test_swatter.bmp" id="3_q4b80"]
 [ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="4_nf2te"]
-[ext_resource type="Texture2D" uid="uid://c30riukrfv46a" path="res://assets/sprites/Towers/Swatter.png" id="4_nmxh2"]
+[ext_resource type="Texture2D" uid="uid://c30riukrfv46a" path="res://assets/sprites/towers/Swatter.png" id="4_nmxh2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hlfxv"]
 atlas = ExtResource("4_nmxh2")
