@@ -8,6 +8,8 @@ const LowerBounds: float = 1070
 const UpperBounds: float = 10
 
 signal sell_tower
+signal place_tower
+signal pickup_tower
 
 @export var rotatable: bool
 @export var movable: bool
@@ -58,7 +60,7 @@ func change_state(new_state: TowerState):
 			ACTIVE_ENTER()
 	
 func PLACING_ENTER():
-	pass
+	pickup_tower.emit()
 	
 func PLACING_UPDATE(_delta):
 	global_position = get_global_mouse_position()
@@ -69,7 +71,7 @@ func PLACING_UPDATE(_delta):
 			change_state(TowerState.ACTIVE)
 	
 func PLACING_EXIT():
-	pass
+	place_tower.emit()
 	
 func ROTATING_ENTER():
 	$Line2D.visible = true

@@ -7,7 +7,6 @@
 [node name="Magnifying Glass" instance=ExtResource("1_0x1q2")]
 script = ExtResource("2_gwejl")
 ray_length = 300.0
-movable = true
 damage = 100.0
 
 [node name="Sprite2D" parent="." index="0"]
@@ -21,3 +20,4 @@ collide_with_areas = true
 
 [node name="Line2D" type="Line2D" parent="RayCast2D" index="0"]
 points = PackedVector2Array(0, 0, 0, 0)
+default_color = Color(1, 1, 0.607843, 0.607843)

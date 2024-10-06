@@ -21,5 +21,6 @@ func ACTIVE_UPDATE(delta):
 		line2d.points[1] = raycast2d.target_position
 
 func update_light_direction():
+	sun_angle = $"..".sun_angle
 	aim_direction = Vector2.from_angle(deg_to_rad(sun_angle)).normalized()
 	raycast2d.target_position = aim_direction*ray_length
