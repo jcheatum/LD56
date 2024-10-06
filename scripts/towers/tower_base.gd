@@ -13,6 +13,7 @@ signal pickup_tower
 
 @export var rotatable: bool
 @export var movable: bool
+@export var placable_on_path: bool
 @export var initial_state: TowerState = TowerState.PLACING
 @export var damage: float = 0
 
@@ -63,8 +64,8 @@ func PLACING_ENTER():
 	pickup_tower.emit()
 	
 func PLACING_UPDATE(_delta):
-	global_position = get_global_mouse_position()
-	if Input.is_action_just_released("left_click") and in_bounds(global_position):
+	global_position = (get_global_mouse_position()/128 as Vector2i)*128 + Vector2i(64,64)
+	if Input.is_action_just_released("left_click") and in_bounds(global_position) and !has_overlapping_areas() and !has_overlapping_bodies():
 		if rotatable:
 			change_state(TowerState.ROTATING)
 		else:
@@ -77,7 +78,14 @@ func ROTATING_ENTER():
 	$Line2D.visible = true
 	
 func ROTATING_UPDATE(_delta):
-	aim_direction = (get_global_mouse_position() - global_position).normalized()
+	# Lock orientation
+	aim_direction = get_global_mouse_position() - global_position
+	if abs(aim_direction.x) > abs(aim_direction.y):
+		aim_direction.x = signf(aim_direction.x)
+		aim_direction.y = 0
+	else:
+		aim_direction.x = 0
+		aim_direction.y = signf(aim_direction.y)
 	if Input.is_action_just_pressed("left_click"):
 			change_state(TowerState.ACTIVE)
 	$Line2D.points[1] = aim_direction*200
