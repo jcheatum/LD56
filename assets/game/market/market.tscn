@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgmfwrdnu35nr"]
+[gd_scene load_steps=8 format=3 uid="uid://cgmfwrdnu35nr"]
 
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
 [ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cp7cjufds6lya" path="res://assets/game/towers/test_flame.bmp" id="4_ktkfy"]
 [ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="5_5var4"]
 [ext_resource type="Texture2D" uid="uid://bxpfcc36hafhx" path="res://assets/game/towers/test_sugar.bmp" id="5_8rf20"]
+[ext_resource type="Texture2D" uid="uid://bl3nn7sxsm07t" path="res://assets/game/towers/test_smoke.bmp" id="7_1egar"]
 
 [node name="Market" type="Control"]
 layout_mode = 3
@@ -18,7 +19,7 @@ enable_market = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1792.0
+offset_left = 1680.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
@@ -26,15 +27,17 @@ metadata/_edit_group_ = true
 
 [node name="MarketItem_MagnifyingGlass" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1808.0
-offset_top = 624.0
-offset_right = 1904.0
-offset_bottom = 720.0
+offset_left = 1695.0
+offset_top = 855.0
+offset_right = 1785.0
+offset_bottom = 945.0
+tower_name = "Magnifying Glass"
+tower_desc = "Focuses the sunlight into a deadly beam in the direction the sun is facing."
 
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1520.0
-offset_right = 1776.0
+offset_left = 1695.0
+offset_right = 1906.0
 offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
 text = "$0"
@@ -42,42 +45,112 @@ horizontal_alignment = 2
 
 [node name="MarketItem_Swatter" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1808.0
-offset_top = 848.0
-offset_right = 1904.0
-offset_bottom = 944.0
+offset_left = 1695.0
+offset_top = 735.0
+offset_right = 1785.0
+offset_bottom = 825.0
 icon = ExtResource("3_oolqe")
 tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
+tower_name = "Fly Swatter"
 cost = 24
 sell_value = 12
+tower_desc = "Repeatedly swats the ground, damaging any bugs in the area."
 
 [node name="MarketItem_Flame" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1808.0
-offset_top = 736.0
-offset_right = 1904.0
-offset_bottom = 832.0
+offset_left = 1815.0
+offset_top = 735.0
+offset_right = 1905.0
+offset_bottom = 825.0
 icon = ExtResource("4_ktkfy")
 tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
+tower_name = "Lighter"
 cost = 36
 sell_value = 18
+tower_desc = "Emits a deadly flame, dealing damage over time to any bug in the area."
 
 [node name="MarketItem_Sugar" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1808.0
-offset_top = 512.0
-offset_right = 1904.0
-offset_bottom = 608.0
+offset_left = 1695.0
+offset_top = 615.0
+offset_right = 1785.0
+offset_bottom = 705.0
 icon = ExtResource("5_8rf20")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
+tower_name = "Sugar Cube"
+tower_desc = "Can be placed on the path to block it, until the bugs eat through it."
 
 [node name="MarketItem_Mirror" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1808.0
-offset_top = 400.0
-offset_right = 1904.0
-offset_bottom = 496.0
+offset_left = 1815.0
+offset_top = 855.0
+offset_right = 1905.0
+offset_bottom = 945.0
 icon = ExtResource("5_5var4")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
+tower_name = "Mirror"
 cost = 2
 sell_value = 1
+tower_desc = "Reflects beams of light from magnifying glasses. Can be chained together."
+
+[node name="MarketItem_Spray" parent="." instance=ExtResource("2_pwd30")]
+layout_mode = 0
+offset_left = 1815.0
+offset_top = 615.0
+offset_right = 1905.0
+offset_bottom = 705.0
+icon = ExtResource("7_1egar")
+tower_path = "res://assets/game/towers/tower_spray.tscn"
+tower_name = "Bug Spray"
+tower_desc = "Shoots bug spray on the ground, dealing damage to bugs that pass over."
+
+[node name="TowerInfoPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1695.0
+offset_top = 255.0
+offset_right = 1905.0
+offset_bottom = 585.0
+
+[node name="Name" type="Label" parent="TowerInfoPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 195.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 24
+text = "Super Cool Tower"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cost" type="Label" parent="TowerInfoPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 195.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 18
+text = "Cost:"
+autowrap_mode = 2
+
+[node name="SellPrice" type="Label" parent="TowerInfoPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 135.0
+offset_right = 195.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 18
+text = "Sell Price:"
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="TowerInfoPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 165.0
+offset_right = 195.0
+offset_bottom = 315.0
+theme_override_font_sizes/font_size = 18
+text = "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="MarketItem_MagnifyingGlass" to="TowerInfoPanel" method="_on_market_item_magnifying_glass_mouse_entered"]

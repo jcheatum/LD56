@@ -10,7 +10,7 @@ script = ExtResource("2_y4tg8")
 placable_on_path = true
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.300322, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_qm075")
 
 [node name="HealthBar" parent="." index="3" instance=ExtResource("3_bu6mh")]

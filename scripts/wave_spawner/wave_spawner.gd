@@ -10,7 +10,7 @@ signal wave_done
 
 @export var wave_file_path: String
 @export var enemy_data_path: String
-@export var spawn_area: Vector2
+@export var spawn_range: float = 40
 
 @onready var spawn_points: Array[Node] = get_children()
 
@@ -52,14 +52,14 @@ func spawn_bug():
 	var instance = scene.instantiate() as Bug
 	instance.bug_died.connect(_on_bug_death)
 	add_sibling(instance)
-	instance.set_target($"../Target".position)
+	instance.set_target($"../PicnicBasket".position)
 	
 	# Position
 	assert(spawn_points.size() > 0, "No Spawn Points are set!")
 	var spawnPoint: Node2D = spawn_points[randi() % spawn_points.size()]
 	instance.global_position = spawnPoint.global_position
-	instance.global_position.x += randf_range(-48, 48)
-	instance.global_position.y += randf_range(-48, 48)
+	instance.global_position.x += randf_range(-spawn_range, spawn_range)
+	instance.global_position.y += randf_range(-spawn_range, spawn_range)
 	
 func _on_bug_death():
 	enemy_count -= 1

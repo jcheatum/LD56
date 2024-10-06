@@ -6,4 +6,3 @@
 script = ExtResource("1_2qm8x")
 wave_file_path = "res://test_waves.cfg"
 enemy_data_path = "res://enemy_data.cfg"
-spawn_area = Vector2(80, 50)

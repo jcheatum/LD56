@@ -74,7 +74,7 @@ tile_map_data = PackedByteArray("AAAAAAcAAAAAAAIAAAABAAcAAAAAAAIAAAACAAcAAAAAAAI
 tile_set = SubResource("TileSet_x7v1t")
 
 [node name="PicnicBasket" parent="." instance=ExtResource("4_ykqc4")]
-position = Vector2(180, 180)
+position = Vector2(214, 167)
 
 [node name="WaveSpawner" parent="." instance=ExtResource("2_ispwc")]
 position = Vector2(-8, 960)
@@ -88,17 +88,19 @@ position = Vector2(1268, 210)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_4c1re")
 
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(213, 192)
+
 [node name="Market" parent="." instance=ExtResource("1_m0u48")]
 initial_money = 48
 
 [node name="StartWave" type="Button" parent="."]
-modulate = Color(0, 1, 0, 1)
-offset_left = 1695.0
-offset_top = 975.0
-offset_right = 1905.0
-offset_bottom = 1065.0
+offset_left = 1808.0
+offset_top = 960.0
+offset_right = 1904.0
+offset_bottom = 1058.0
 theme_override_font_sizes/font_size = 32
-text = "START WAVE"
+text = "Start
+Wave"
 
-[connection signal="dead" from="PicnicBasket" to="." method="_on_picnic_basket_dead"]
 [connection signal="pressed" from="StartWave" to="." method="_on_start_wave_pressed"]
