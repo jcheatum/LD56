@@ -3,19 +3,21 @@
 [ext_resource type="Script" path="res://scripts/towers/tower_base.gd" id="1_pdp3h"]
 [ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="2_ecn7r"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_foeq7"]
-radius = 67.1193
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3f6j1"]
+size = Vector2(96, 96)
 
 [node name="TowerBase" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_pdp3h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ecn7r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_foeq7")
+shape = SubResource("RectangleShape2D_3f6j1")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0, 0, 0)
-width = 5.0
+width = 3.0
 default_color = Color(1, 0, 0, 0.607843)

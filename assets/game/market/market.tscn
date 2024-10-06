@@ -16,7 +16,7 @@ enable_market = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 1750.0
+offset_left = 1792.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0, 0, 0, 1)
@@ -24,27 +24,26 @@ metadata/_edit_group_ = true
 
 [node name="MarketItem_MagnifyingGlass" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1768.0
-offset_top = 440.0
+offset_left = 1808.0
+offset_top = 624.0
 offset_right = 1904.0
-offset_bottom = 576.0
+offset_bottom = 720.0
 
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1753.0
-offset_top = 2.0
-offset_right = 1917.0
-offset_bottom = 101.0
+offset_left = 1520.0
+offset_right = 1776.0
+offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
-text = "$$$$"
-horizontal_alignment = 1
+text = "$0"
+horizontal_alignment = 2
 
 [node name="MarketItem_Swatter" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1768.0
-offset_top = 760.0
+offset_left = 1808.0
+offset_top = 848.0
 offset_right = 1904.0
-offset_bottom = 896.0
+offset_bottom = 944.0
 icon = ExtResource("3_oolqe")
 tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
 cost = 24
@@ -52,10 +51,10 @@ sell_value = 12
 
 [node name="MarketItem_Flame" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1768.0
-offset_top = 600.0
+offset_left = 1808.0
+offset_top = 736.0
 offset_right = 1904.0
-offset_bottom = 736.0
+offset_bottom = 832.0
 icon = ExtResource("4_ktkfy")
 tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
 cost = 36
