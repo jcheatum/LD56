@@ -38,7 +38,8 @@ visible = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_synso")
-frame = 1
 
 [node name="AnimatedSprite2D" parent="Flame/FlameZone" index="1"]
 visible = false
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
