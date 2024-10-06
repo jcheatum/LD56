@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://q36ssgbmmg6l"]
+[gd_scene load_steps=7 format=3 uid="uid://q36ssgbmmg6l"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_hqekb"]
 [ext_resource type="PackedScene" uid="uid://cgmfwrdnu35nr" path="res://assets/game/market/market.tscn" id="1_m0u48"]
 [ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="2_ispwc"]
+[ext_resource type="PackedScene" uid="uid://c6yd50smba556" path="res://assets/game/picnic_basket/picnic_basket.tscn" id="4_ykqc4"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4c1re"]
 vertices = PackedVector2Array(260.063, 599.461, 276.883, 778.867, 234.352, 704, 228.68, 682.82, 228.68, 725.18, 213.18, 667.32, 116.117, 543.57, -249.578, 1031.93, -258.367, 885.18, 1632.72, 917.172, 1705.12, 1018.06, 1707.87, 799.852, 1633.27, 897.383, 87.9531, 838.406, 1594.63, 361.078, 112.813, 183.344, 135, 66.3984, 1689, 313.531, 1689, 538.406, 1599.42, 472.508, 192, 661.648, 170.82, 667.32, 213.18, 740.68, 192, 746.352, 170.82, 740.68, 155.32, 725.18, 155.32, 682.82, 149.648, 704)
@@ -14,6 +15,9 @@ radius = 32.0
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hqekb")
+
+[node name="PicnicBasket" parent="." instance=ExtResource("4_ykqc4")]
+position = Vector2(213, 138)
 
 [node name="Market" parent="." instance=ExtResource("1_m0u48")]
 initial_money = 48
