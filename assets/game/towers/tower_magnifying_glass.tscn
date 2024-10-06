@@ -7,7 +7,7 @@
 [node name="Magnifying Glass" instance=ExtResource("1_0x1q2")]
 script = ExtResource("2_gwejl")
 ray_length = 2203.0
-damage = 100.0
+damage = 80.0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(0, 32)

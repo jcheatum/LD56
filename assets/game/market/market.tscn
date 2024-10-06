@@ -78,6 +78,8 @@ offset_bottom = 705.0
 icon = ExtResource("5_8rf20")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
 tower_name = "Sugar Cube"
+cost = 6
+sell_value = 3
 tower_desc = "Can be placed on the path to block it, until the bugs eat through it."
 
 [node name="MarketItem_Mirror" parent="." instance=ExtResource("2_pwd30")]
@@ -89,8 +91,8 @@ offset_bottom = 945.0
 icon = ExtResource("5_5var4")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
-cost = 2
-sell_value = 1
+cost = 6
+sell_value = 3
 tower_desc = "Reflects beams of light from magnifying glasses. Can be chained together."
 
 [node name="MarketItem_Spray" parent="." instance=ExtResource("2_pwd30")]

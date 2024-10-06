@@ -9,6 +9,9 @@ var active_scene: Node2D = null
 func _ready():
 	# List Scenes
 	scenes["test_level"] = preload("res://assets/game/levels/test_level.tscn")
+	scenes["level_1"] = preload("res://assets/game/levels/level_1.tscn")
+	scenes["level_2"] = preload("res://assets/game/levels/level_2.tscn")
+	scenes["level_3"] = preload("res://assets/game/levels/level_3.tscn")
 
 func change_scene(scene_name: String):
 	assert(scenes.has(scene_name), "Scene " + scene_name + " not found in SceneManager!")
