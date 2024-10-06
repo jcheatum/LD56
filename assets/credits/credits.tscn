@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://5strikbrm5oi"]
 
 [node name="Credits" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 93.0
+offset_bottom = 39.0
+text = "credits"

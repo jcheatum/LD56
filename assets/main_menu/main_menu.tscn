@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://qpedvr1uwrji"]
+[gd_scene load_steps=2 format=3 uid="uid://qpedvr1uwrji"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_7jsuf"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_yyhbl"]
-font_size = 150
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,8 +17,9 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 384.0
-text = "Untitled"
-label_settings = SubResource("LabelSettings_yyhbl")
+theme_override_font_sizes/font_size = 72
+text = "Raising The Bread 2:
+Defending the Bread (working title)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

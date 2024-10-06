@@ -2,6 +2,8 @@ class_name WaveSpawner extends Node2D
 
 class Wave:
 	var spawn_rate: float
+	var reward_money: float
+	var sun_angle: float
 	var enemies: Dictionary
 
 signal wave_done
@@ -16,7 +18,6 @@ var bug_queue: Array[String]
 var spawn_rate: float
 var spawn_timer: float
 var enemy_count: int = 0;
-var current_wave: int = 0
 
 func _ready():
 	load_enemy_data()
@@ -50,7 +51,6 @@ func spawn_bug():
 	instance.global_position.x += randf_range(-spawn_area.x, spawn_area.x)
 	instance.global_position.y += randf_range(-spawn_area.y, spawn_area.y)
 	add_sibling(instance)
-	await instance.ready
 	instance.set_target($"../Target".position)
 	
 func _on_bug_death():
@@ -85,8 +85,10 @@ func load_wave_data():
 	for wave in config.get_sections():
 		var new_wave: Wave = Wave.new()
 		new_wave.spawn_rate = config.get_value(wave, "spawn_rate")
+		new_wave.reward_money = config.get_value(wave, "reward_money")
+		new_wave.sun_angle = config.get_value(wave, "sun_angle")
 		for key in config.get_section_keys(wave):
-			if key != "spawn_rate":
+			if !["spawn_rate","reward_money","sun_angle"].has(key):
 				new_wave.enemies[key] = config.get_value(wave, key)
 		waves.append(new_wave)
 	print("Finished loading wave configuration file!")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://q36ssgbmmg6l"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_hqekb"]
+[ext_resource type="PackedScene" uid="uid://cgmfwrdnu35nr" path="res://assets/game/market/market.tscn" id="1_m0u48"]
+[ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="2_ispwc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4c1re"]
+vertices = PackedVector2Array(260.063, 599.461, 276.883, 778.867, 234.352, 704, 228.68, 682.82, 228.68, 725.18, 213.18, 667.32, 116.117, 543.57, -249.578, 1031.93, -258.367, 885.18, 1632.72, 917.172, 1705.12, 1018.06, 1707.87, 799.852, 1633.27, 897.383, 87.9531, 838.406, 1594.63, 361.078, 112.813, 183.344, 135, 66.3984, 1689, 313.531, 1689, 538.406, 1599.42, 472.508, 192, 661.648, 170.82, 667.32, 213.18, 740.68, 192, 746.352, 170.82, 740.68, 155.32, 725.18, 155.32, 682.82, 149.648, 704)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 2, 1), PackedInt32Array(0, 3, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 10, 9, 12), PackedInt32Array(1, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(14, 17, 18, 19), PackedInt32Array(19, 18, 0, 6), PackedInt32Array(6, 5, 20), PackedInt32Array(6, 20, 21), PackedInt32Array(22, 4, 1), PackedInt32Array(22, 1, 13, 23), PackedInt32Array(24, 23, 13), PackedInt32Array(25, 24, 13), PackedInt32Array(6, 21, 26), PackedInt32Array(13, 6, 26, 27), PackedInt32Array(13, 27, 25)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-259, 1042, 1715, 1028, 1718, 790, 286, 769, 271, 609, 1699, 548, 1699, 305, 127, 55, 101, 192, 1585, 370, 1589, 463, 107, 534, 77, 848, 1623, 907, -269, 875)])
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykjt4"]
+radius = 32.0
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_hqekb")
+
+[node name="Market" parent="." instance=ExtResource("1_m0u48")]
+initial_money = 48
+
+[node name="WaveSpawner" parent="." instance=ExtResource("2_ispwc")]
+position = Vector2(-8, 960)
+spawn_area = Vector2(0, 50)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_4c1re")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NavigationRegion2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/StaticBody2D"]
+position = Vector2(192, 704)
+shape = SubResource("CircleShape2D_ykjt4")
+
+[node name="StartWave" type="Button" parent="."]
+offset_left = 1768.0
+offset_top = 920.0
+offset_right = 1904.0
+offset_bottom = 1056.0
+theme_override_font_sizes/font_size = 32
+text = "Start
+Wave"
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2(208, 136)
+
+[connection signal="pressed" from="StartWave" to="." method="_on_start_wave_pressed"]

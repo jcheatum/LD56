@@ -5,6 +5,7 @@ extends Node2D
 func _on_main_menu_game_start():
 	$MainMenu.hide()
 	$Game.show()
+	$Game.start_game()
 
 
 func _on_main_menu_open_settings():
