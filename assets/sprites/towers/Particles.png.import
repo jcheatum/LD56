@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6fcvkfh7h4kh"
-path="res://.godot/imported/Swatter_up.png-ef1ec4074f1e6f3cdf2c422dbccb6124.ctex"
+uid="uid://buoqu1cwm31n5"
+path="res://.godot/imported/Particles.png-258a90aa40d4c96e9de5bfc39c6cfa8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/Swatter_up.png"
-dest_files=["res://.godot/imported/Swatter_up.png-ef1ec4074f1e6f3cdf2c422dbccb6124.ctex"]
+source_file="res://assets/sprites/towers/Particles.png"
+dest_files=["res://.godot/imported/Particles.png-258a90aa40d4c96e9de5bfc39c6cfa8a.ctex"]
 
 [params]
 

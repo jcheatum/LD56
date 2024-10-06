@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4d7wkhwlb7ct"
-path="res://.godot/imported/L4-Bug spray up.png-24489515508d53b0589f8f0e8c461c08.ctex"
+uid="uid://bcrpcrp8du0ng"
+path="res://.godot/imported/L3-Bug spray down.png-470baca29c6478e86c6c1d58fb225d3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/spray/L4-Bug spray up.png"
-dest_files=["res://.godot/imported/L4-Bug spray up.png-24489515508d53b0589f8f0e8c461c08.ctex"]
+source_file="res://assets/sprites/towers/spray/L3-Bug spray down.png"
+dest_files=["res://.godot/imported/L3-Bug spray down.png-470baca29c6478e86c6c1d58fb225d3c.ctex"]
 
 [params]
 

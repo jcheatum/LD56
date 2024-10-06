@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de2q65kc06rei"
-path="res://.godot/imported/Swatter_down.png-d33300e76d5cd52e3179f67bb9be97b5.ctex"
+uid="uid://c8s1pmyikcjm"
+path="res://.godot/imported/Magnifying Glass.png-81c2a2cfa04a549949b6203cc2d1a34d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/Swatter_down.png"
-dest_files=["res://.godot/imported/Swatter_down.png-d33300e76d5cd52e3179f67bb9be97b5.ctex"]
+source_file="res://assets/sprites/towers/Magnifying Glass.png"
+dest_files=["res://.godot/imported/Magnifying Glass.png-81c2a2cfa04a549949b6203cc2d1a34d.ctex"]
 
 [params]
 

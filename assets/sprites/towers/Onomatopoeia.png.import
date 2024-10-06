@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1lv8gaa2as1h"
-path="res://.godot/imported/sugar_cube_icon.png-e728d51777ae553a567a432a083e27c3.ctex"
+uid="uid://chax0jkjgva83"
+path="res://.godot/imported/Onomatopoeia.png-5092a2e8c70951fc170813e92f701b73.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Towers/sugar_cube_icon.png"
-dest_files=["res://.godot/imported/sugar_cube_icon.png-e728d51777ae553a567a432a083e27c3.ctex"]
+source_file="res://assets/sprites/towers/Onomatopoeia.png"
+dest_files=["res://.godot/imported/Onomatopoeia.png-5092a2e8c70951fc170813e92f701b73.ctex"]
 
 [params]
 
