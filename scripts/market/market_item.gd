@@ -17,8 +17,7 @@ func _on_button_down() -> void:
 		market.money -= cost
 
 func _on_sell_tower():
-	if market.enable_market:
-		market.money += sell_value
+	market.money += sell_value
 
 func _on_place_tower():
 	market.enable_market = true

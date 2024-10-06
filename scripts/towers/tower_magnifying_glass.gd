@@ -17,6 +17,9 @@ func ACTIVE_UPDATE(delta):
 		if collider != null and collider.has_method("damage"):
 			collider.damage(damage * delta)
 			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
+		if collider != null and collider.owner != null and collider.owner.has_method("reflect"):
+			collider.owner.reflect(raycast2d.get_collision_point(),aim_direction,delta,1)
+			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
 	else:
 		line2d.points[1] = raycast2d.target_position
 

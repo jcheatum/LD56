@@ -28,23 +28,23 @@ sources/1 = SubResource("TileSetAtlasSource_dxkws")
 texture = ExtResource("3_ogpok")
 texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 4:2/0 = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
 
 [sub_resource type="TileSet" id="TileSet_x7v1t"]
 tile_size = Vector2i(32, 32)
@@ -53,9 +53,9 @@ physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_njmge")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4c1re"]
-vertices = PackedVector2Array(1398, 1014, 1398, 1270, 1290, 1270, 1290, 1014, -246, 1014, -246, 906, 1546, 906, 1654, 1014, 1654, 650, 1546, 758, 246, 650, 138, 758, 138, 394, 246, 502, 1546, 394, 1654, 502, 1654, 138, 1546, 246, 106, 138, 106, 246)
+vertices = PackedVector2Array(1382, 998, 1382, 1254, 1306, 1254, 1306, 998, -230, 998, -230, 922, 1562, 922, 1638, 998, 1638, 666, 1562, 742, 230, 666, 154, 742, 154, 410, 230, 486, 1562, 410, 1638, 486, 1638, 154, 1562, 230, 122, 154, 122, 230)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6), PackedInt32Array(7, 0, 6), PackedInt32Array(8, 7, 6, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(13, 12, 14, 15), PackedInt32Array(16, 15, 14, 17), PackedInt32Array(18, 16, 17, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-256, 1024, 1280, 1024, 1280, 1280, 1408, 1280, 1408, 1024, 1664, 1024, 1664, 640, 256, 640, 256, 512, 1664, 512, 1664, 128, 96, 128, 96, 256, 1536, 256, 1536, 384, 128, 384, 128, 768, 1536, 768, 1536, 896, -256, 896)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-240, 1008, 1296, 1008, 1296, 1264, 1392, 1264, 1392, 1008, 1648, 1008, 1648, 656, 240, 656, 240, 496, 1648, 496, 1648, 144, 112, 144, 112, 240, 1552, 240, 1552, 400, 144, 400, 144, 752, 1552, 752, 1552, 912, -240, 912)])
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hqekb")

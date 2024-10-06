@@ -9,6 +9,10 @@ var health_bar: HealthBar
 var direction_container
 
 func _physics_process(delta: float) -> void:
+	for area in get_overlapping_areas():
+		if area is Sugar:
+			area.eat_sugar(delta)
+			return
 	# Update velocity according to navigation and move
 	var direction = navigator.get_next_path_position() - global_position
 	velocity = Global.exp_decay(velocity, direction.normalized() * speed, 16, delta)
