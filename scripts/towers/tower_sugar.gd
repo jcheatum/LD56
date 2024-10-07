@@ -18,3 +18,12 @@ func eat_sugar(damage: float):
 		$AnimatedSprite2D.frame = 1
 	else:
 		$AnimatedSprite2D.frame = 0
+		
+	# Sound
+	if !$Timer.time_left > 0:
+		$Timer.start()
+	
+
+func _on_timer_timeout() -> void:
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/bite.wav"))
+	$Timer.stop()

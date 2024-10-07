@@ -34,8 +34,6 @@ visible = false
 stream = ExtResource("7_0vl0g")
 autoplay = true
 
-[node name="SfxPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 [connection signal="game_start" from="MainMenu" to="." method="_on_main_menu_game_start"]
 [connection signal="open_settings" from="MainMenu" to="." method="_on_main_menu_open_settings"]
 [connection signal="open_settings" from="MainMenu" to="SettingsMenu" method="_on_main_menu_open_settings"]

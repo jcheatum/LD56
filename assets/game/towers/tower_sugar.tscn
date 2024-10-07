@@ -62,11 +62,13 @@ placable_on_path = true
 
 [node name="Sprite2D" parent="." index="0"]
 visible = false
+texture_filter = 1
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_qm075")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
-scale = Vector2(4.5, 4.5)
+texture_filter = 1
+scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_sg8em")
 
 [node name="HealthBar" parent="." index="4" instance=ExtResource("3_bu6mh")]
@@ -76,4 +78,8 @@ offset_top = -56.0
 offset_right = 105.0
 offset_bottom = -29.0
 
+[node name="Timer" type="Timer" parent="." index="5"]
+wait_time = 0.5
+
 [connection signal="empty" from="HealthBar" to="." method="_on_health_bar_empty"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

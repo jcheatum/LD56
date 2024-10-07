@@ -28,18 +28,18 @@ animations = [{
 
 [node name="Spray" instance=ExtResource("1_lgknb")]
 script = ExtResource("2_k2kio")
-on_timer = 0.0
-off_timer = 0.0
+off_timer = 2.0
 damage = 20.0
 
 [node name="Sprite2D" parent="." index="0"]
 visible = false
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_synso")
 
 [node name="AnimatedSprite2D" parent="Flame/FlameZone" index="1"]
-visible = false
+modulate = Color(0, 0, 1, 0.607843)
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

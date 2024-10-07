@@ -25,9 +25,26 @@ func ACTIVE_UPDATE(delta):
 	if smoke_timer <= 0:
 		Smoke.visible = false
 		
+func ROTATING_UPDATE(_delta):
+	# Lock orientation
+	aim_direction = get_global_mouse_position() - global_position
+	if aim_direction.x > 0:
+		aim_direction.x = 1
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.offset.x = 0
+	else:
+		aim_direction.x = -1
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.offset.x = -60
+	aim_direction.y = 0
+	if Input.is_action_just_pressed("left_click"):
+			change_state(TowerState.ACTIVE)
+	$Line2D.points[1] = aim_direction*200
+
 func swat():
 	#print("Swat!")
-	Smoke.visible = true
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/swat.wav"))
+	#Smoke.visible = true
 	smoke_timer = 0.3
 	$AnimatedSprite2D.play()
 	if SwatZone.has_overlapping_areas():

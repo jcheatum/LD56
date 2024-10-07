@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=4 uid="uid://b8vilau84qt0m"]
 
-[ext_resource type="PackedScene" uid="uid://bkdtkk3h4oy8a" path="res://assets/game/levels/level_template.tscn" id="1_bsdbj"]
+[ext_resource type="PackedScene" uid="uid://qtcyjgtgopwv" path="res://assets/game/levels/level_template.tscn" id="1_bsdbj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pp2lb"]
 vertices = PackedVector2Array(1345, 505, 1345, -95, 1415, -95, 1415, 575, 695, 575, 625, 505, 625, 865, 695, 865, 1535, 865, 1535, 1175, 1465, 1175, 1465, 935, 145, 935, 455, 865, 145, 385, 215, 385, 215, 865, 145, 335, 145, -95, 215, -95, 215, 265, 385, 335, 455, 265, 385, 865)

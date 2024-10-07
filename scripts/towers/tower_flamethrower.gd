@@ -35,7 +35,21 @@ func ACTIVE_UPDATE(delta):
 			if collider != null and collider.has_method("damage"):
 				collider.damage(damage*delta)
 
+func ROTATING_UPDATE(_delta):
+	# Lock orientation
+	aim_direction = get_global_mouse_position() - global_position
+	if abs(aim_direction.x) > abs(aim_direction.y):
+		aim_direction.x = signf(aim_direction.x)
+		aim_direction.y = 0
+	else:
+		aim_direction.x = 0
+		aim_direction.y = signf(aim_direction.y)
+	if Input.is_action_just_pressed("left_click"):
+			change_state(TowerState.ACTIVE)
+	$Line2D.points[1] = Vector2.RIGHT*200
+
 func flame_on():
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/flame.wav"))
 	print("FLAME ON!")
 	Flame.visible = true
 	timer = on_timer

@@ -21,6 +21,3 @@ navigation_polygon = SubResource("NavigationPolygon_7o6ee")
 
 [node name="WaveSpawner" parent="." index="3"]
 wave_file_path = "res://level_1_waves.cfg"
-
-[node name="Market" parent="." index="4"]
-initial_money = 24

@@ -46,7 +46,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 8.0
+"speed": 16.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1cyq6"]
@@ -64,18 +64,21 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_q4b80")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
-scale = Vector2(2, 2)
+texture_filter = 1
+position = Vector2(60, -60)
+scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_0blej")
 
 [node name="Swatter" type="Node2D" parent="." index="3"]
 
 [node name="SwatZone" type="Area2D" parent="Swatter" index="0"]
-position = Vector2(127, 0)
+position = Vector2(120, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Swatter/SwatZone" index="0"]
 shape = SubResource("CircleShape2D_1cyq6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Swatter/SwatZone" index="1"]
+visible = false
 modulate = Color(1, 1, 1, 0.607843)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_nf2te")
