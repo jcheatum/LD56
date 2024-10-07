@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://qtcyjgtgopwv" path="res://assets/game/levels/level_template.tscn" id="1_rsw4d"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_34n87"]
-vertices = PackedVector2Array(1175, 865, 1655, 865, 1655, 935, 265, 935, 265, 215, -95, 215, -95, 145, 335, 145, 335, 865, 505, 335, 505, -95, 575, -95, 575, 265, 1585, 335, 1655, 265, 1655, 575, 1585, 505, 695, 575, 625, 505, 625, 695, 695, 625, 1104.98, 695, 1175, 625, 1105.32, 865)
+vertices = PackedVector2Array(1160, 880, 1640, 880, 1640, 920, 280, 920, 280, 200, -80, 200, -80, 160, 320, 160, 320, 880, 520, 320, 520, -80, 560, -80, 560, 280, 1600, 320, 1640, 280, 1640, 560, 1600, 520, 680, 560, 640, 520, 640, 680, 680, 640, 1120, 680, 1160, 640, 1120, 880)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(4, 7, 8, 3), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 9, 12, 14), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(16, 15, 17, 18), PackedInt32Array(19, 18, 17, 20), PackedInt32Array(21, 19, 20, 22), PackedInt32Array(21, 22, 0, 23), PackedInt32Array(23, 0, 3), PackedInt32Array(23, 3, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-105, 225, 255, 225, 255, 945, 1665, 945, 1665, 855, 1185, 855, 1185, 615, 705, 615, 705, 585, 1665, 585, 1665, 255, 585, 255, 585, -105, 495, -105, 495, 345, 1575, 345, 1575, 495, 615, 495, 615, 705, 1095, 705, 1095.31, 855, 345, 855, 345, 135, -105, 135)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-90, 210, 270, 210, 270, 930, 1650, 930, 1650, 870, 1170, 870, 1170, 630, 690, 630, 690, 570, 1650, 570, 1650, 270, 570, 270, 570, -90, 510, -90, 510, 330, 1590, 330, 1590, 510, 630, 510, 630, 690, 1110, 690, 1110, 870, 330, 870, 330, 150, -90, 150)])
 
 [node name="Level2" instance=ExtResource("1_rsw4d")]
 next_level = "level_3"

@@ -26,6 +26,5 @@ func PlaySoundEffect(stream :AudioStream, volume_scale: float = 1, pitch_scale: 
 	# Play the sound
 	available_player.stream = stream
 	available_player.volume_db = linear_to_db(volume * volume_scale)
-	print(available_player.volume_db)
 	available_player.pitch_scale = pitch_scale
 	available_player.play()

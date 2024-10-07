@@ -55,8 +55,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 45.0
-height = 120.0
+radius = 70.0
+height = 140.0
 
 [node name="Hornet" type="Area2D"]
 collision_layer = 3
@@ -66,20 +66,20 @@ speed = 120.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -56)
+position = Vector2(0, -48)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_gl55i")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13, -58)
+position = Vector2(0, -50)
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f6xfa")]
 offset_left = -15.0
-offset_top = -130.0
+offset_top = -122.0
 offset_right = 105.0
-offset_bottom = -103.0
+offset_bottom = -95.0
 max_value = 300.0
 value = 300.0
 

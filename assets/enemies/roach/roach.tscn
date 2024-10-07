@@ -55,8 +55,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 25.0
-height = 180.0
+radius = 34.0
+height = 186.0
 
 [node name="Roach" type="Area2D"]
 collision_layer = 3
@@ -65,7 +65,7 @@ script = ExtResource("1_35c57")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -88)
+position = Vector2(0, -80)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_dey0c")
 autoplay = "default"
@@ -73,14 +73,14 @@ frame = 3
 frame_progress = 0.89727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -88)
+position = Vector2(0, -80)
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f1udd")]
 offset_left = -15.0
-offset_top = -164.0
+offset_top = -156.0
 offset_right = 105.0
-offset_bottom = -137.0
+offset_bottom = -129.0
 max_value = 1000.0
 value = 1000.0
 

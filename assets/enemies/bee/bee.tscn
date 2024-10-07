@@ -55,8 +55,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 31.1127
-height = 108.894
+radius = 46.0
+height = 98.0
 
 [node name="Bee" type="Area2D"]
 collision_layer = 3
@@ -66,22 +66,22 @@ speed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -48)
+position = Vector2(0, -40)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_huio1")
 autoplay = "default"
 frame_progress = 0.107859
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, -45)
-rotation = -0.785398
+position = Vector2(0, -37)
+rotation = -1.5708
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_788mu")]
 offset_left = -15.0
-offset_top = -107.0
+offset_top = -99.0
 offset_right = 105.0
-offset_bottom = -80.0
+offset_bottom = -72.0
 max_value = 200.0
 value = 150.0
 

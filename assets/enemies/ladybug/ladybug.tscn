@@ -54,9 +54,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-radius = 25.9421
-height = 107.629
+[sub_resource type="CircleShape2D" id="CircleShape2D_h5j8e"]
+radius = 49.5782
 
 [node name="Ladybug" type="Area2D"]
 collision_layer = 3
@@ -66,22 +65,22 @@ speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -48)
+position = Vector2(0, -40)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_2t8ey")
 autoplay = "default"
 frame_progress = 0.396816
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, -49)
+position = Vector2(0, -35)
 rotation = -0.837758
-shape = SubResource("CapsuleShape2D_6uikl")
+shape = SubResource("CircleShape2D_h5j8e")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_ot80v")]
 offset_left = -15.0
-offset_top = -103.0
+offset_top = -95.0
 offset_right = 105.0
-offset_bottom = -76.0
+offset_bottom = -68.0
 max_value = 600.0
 value = 600.0
 
