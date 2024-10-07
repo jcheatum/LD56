@@ -21,7 +21,7 @@ signal pickup_tower
 
 const tileSize: float = 120
 
-var aim_direction: Vector2 = Vector2.RIGHT
+var aim_direction: Vector2 = Vector2.DOWN
 
 func _ready():
 	match current_state:
