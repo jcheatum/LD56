@@ -16,6 +16,7 @@ signal wave_done
 
 var waves: Array[Wave]
 var enemy_data: Dictionary
+var enemy_deaths: Dictionary
 var bug_queue: Array[String]
 var spawn_rate: float
 var spawn_timer: float
@@ -61,10 +62,26 @@ func spawn_bug():
 	instance.global_position.x += randf_range(-spawn_range, spawn_range)
 	instance.global_position.y += randf_range(-spawn_range, spawn_range)
 	
-func _on_bug_death():
+func _on_bug_death(bug_type: String, bug_position: Vector2):
 	enemy_count -= 1
+	var deathScn = enemy_deaths[bug_type]
+	var DeathSprite = load(deathScn)
+	var instance = DeathSprite.instantiate()
+	instance.position = bug_position
+	add_sibling(instance)
+	
+	var timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 3
+	timer.start()
+	timer.timeout.connect(DelayedFree.bind(instance))
+	
 	if enemy_count <= 0 and bug_queue.size() <= 0:
 		wave_done.emit()
+		
+func DelayedFree(instance):
+	if(instance != null):
+		instance.queue_free()
 		
 func shuffle_bug_queue():
 	var rand1: int
@@ -84,6 +101,7 @@ func load_enemy_data():
 	assert(err == OK, "Error loading enemy data file.")
 	for enemy in config.get_sections():
 		enemy_data[enemy] = config.get_value(enemy, "path")
+		enemy_deaths[enemy] = config.get_value(enemy, "death")
 	print("Finished loading enemy data file!")
 
 func load_wave_data():

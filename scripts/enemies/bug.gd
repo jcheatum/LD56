@@ -1,6 +1,6 @@
 class_name Bug extends Area2D
 
-signal bug_died
+signal bug_died(bug_type: String, position: Vector2)
 
 @export var speed: float = 70.0
 @export var burn_damage: float = 10.0
@@ -11,6 +11,7 @@ var navigator: NavigationAgent2D
 var health_bar: HealthBar
 var direction_container
 var burned: bool = false
+var bug_type: String = "Ant"
 
 func _physics_process(delta: float) -> void:
 	for area in get_overlapping_areas():
@@ -43,7 +44,7 @@ func set_target(location: Vector2) -> void:
 
 # Pretty self explanitory
 func die() -> void:
-	bug_died.emit()
+	bug_died.emit(self.bug_type, position)
 	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/bug_death.wav"))
 	self.queue_free()
 

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0m25nl3jphlp"]
+
+[ext_resource type="Texture2D" uid="uid://dt0fsnyobvbw1" path="res://assets/sprites/enemies/Enemies_dead.png" id="1_jxt0k"]
+
+[node name="BeeDead" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.75, 3.75)
+texture = ExtResource("1_jxt0k")
+region_enabled = true
+region_rect = Rect2(0, 15, 32, 17)
