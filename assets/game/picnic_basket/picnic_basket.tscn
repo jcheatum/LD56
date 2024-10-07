@@ -64,7 +64,7 @@ texture_filter = 1
 script = ExtResource("1_kkvjl")
 
 [node name="Blanket" type="Sprite2D" parent="."]
-rotation = -1.5708
+position = Vector2(0, 32)
 scale = Vector2(3, 3)
 texture = ExtResource("2_dgp6t")
 region_enabled = true
