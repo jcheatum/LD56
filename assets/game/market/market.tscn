@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgmfwrdnu35nr"]
+[gd_scene load_steps=11 format=3 uid="uid://cgmfwrdnu35nr"]
 
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
 [ext_resource type="Texture2D" uid="uid://b35m6yaabb0n2" path="res://assets/sprites/ui/Background .png" id="2_04stn"]
@@ -9,14 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
 [ext_resource type="Texture2D" uid="uid://c87ul43a4govo" path="res://assets/sprites/towers/Mirror_icon.png" id="7_w5w5m"]
 [ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yplh"]
-atlas = ExtResource("2_04stn")
-region = Rect2(140, 0, 70, 288)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iocdl"]
-atlas = ExtResource("2_04stn")
-region = Rect2(70, 0, 70, 288)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63wa1"]
 atlas = ExtResource("2_04stn")
@@ -33,30 +25,7 @@ script = ExtResource("1_iqbx2")
 initial_money = 100
 enable_market = true
 
-[node name="Backgrounds" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect3" type="TextureRect" parent="Backgrounds"]
-texture_filter = 1
-offset_left = 1658.0
-offset_right = 1923.0
-offset_bottom = 1080.0
-texture = SubResource("AtlasTexture_1yplh")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="TextureRect2" type="TextureRect" parent="Backgrounds"]
-texture_filter = 1
-offset_left = 1658.0
-offset_right = 1923.0
-offset_bottom = 1080.0
-texture = SubResource("AtlasTexture_iocdl")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="TextureRect" type="TextureRect" parent="Backgrounds"]
+[node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
 offset_left = 1658.0
 offset_right = 1923.0
