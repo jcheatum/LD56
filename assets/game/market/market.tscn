@@ -5,11 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c8s1pmyikcjm" path="res://assets/sprites/towers/Magnifying Glass.png" id="3_rn332"]
 [ext_resource type="Texture2D" uid="uid://dxsdmwkvjnpba" path="res://assets/sprites/towers/Swatter_icon.png" id="4_a7qwe"]
 [ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="4_uhfrn"]
-[ext_resource type="Texture2D" uid="uid://bswxm5675negt" path="res://icon.svg" id="5_5var4"]
 [ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
+[ext_resource type="Texture2D" uid="uid://bu25eol1t1h8" path="res://assets/sprites/towers/Mirror.png" id="7_s4vwu"]
 [ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
 
 [node name="Market" type="Control"]
+z_index = 2000
+z_as_relative = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -81,7 +83,7 @@ icon = ExtResource("6_yghrj")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
 tower_name = "Sugar Cube"
 cost = 6
-sell_value = 3
+sell_value = 0
 tower_desc = "Can be placed on the path to block it, until the bugs eat through it."
 
 [node name="MarketItem_Mirror" parent="." instance=ExtResource("2_pwd30")]
@@ -90,11 +92,10 @@ offset_left = 1815.0
 offset_top = 855.0
 offset_right = 1905.0
 offset_bottom = 945.0
-icon = ExtResource("5_5var4")
+icon = ExtResource("7_s4vwu")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
 cost = 6
-sell_value = 3
 tower_desc = "Reflects beams of light from magnifying glasses. Can be chained together."
 
 [node name="MarketItem_Spray" parent="." instance=ExtResource("2_pwd30")]

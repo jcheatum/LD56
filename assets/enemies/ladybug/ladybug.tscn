@@ -66,23 +66,24 @@ speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(4.76837e-07, -1.2517e-06)
+position = Vector2(0, -48)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_2t8ey")
+autoplay = "default"
 frame_progress = 0.396816
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, -1)
+position = Vector2(9, -49)
 rotation = -0.837758
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_ot80v")]
 offset_left = -15.0
-offset_top = -55.0
+offset_top = -103.0
 offset_right = 105.0
-offset_bottom = -28.0
-max_value = 150.0
-value = 150.0
+offset_bottom = -76.0
+max_value = 300.0
+value = 300.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

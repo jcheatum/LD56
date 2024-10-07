@@ -22,6 +22,9 @@ position = Vector2(180, 540)
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="2"]
 navigation_polygon = SubResource("NavigationPolygon_pp2lb")
 
+[node name="WaveSpawner" parent="." index="3"]
+wave_file_path = "res://level_3_waves.cfg"
+
 [node name="SpawnPoint1" parent="WaveSpawner" index="0"]
 position = Vector2(188, -1005)
 
@@ -30,3 +33,10 @@ position = Vector2(1388, -1005)
 
 [node name="SpawnPoint3" type="Node2D" parent="WaveSpawner" index="2"]
 position = Vector2(1508, 165)
+
+[node name="Market" parent="." index="4"]
+initial_money = 96
+
+[node name="StartWave" parent="." index="5"]
+z_index = 4000
+z_as_relative = false

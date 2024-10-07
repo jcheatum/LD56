@@ -2,6 +2,7 @@ class_name Mirror extends TowerBase
 
 @export var ray_length: float = 200
 @export var max_bounces: int = 10
+@export var burn_time: float = 2
 
 @onready var raycast2d: RayCast2D = $RayCast2D
 @onready var line2d: Line2D = $RayCast2D/Line2D
@@ -32,6 +33,15 @@ func ROTATING_UPDATE(_delta):
 	if Input.is_action_just_pressed("left_click"):
 			change_state(TowerState.ACTIVE)
 	$Line2D.points[1] = aim_direction*200
+	# pick frame
+	if abs(aim_direction.y) > 0.95:
+		$AnimatedSprite2D.frame = 0
+	elif abs(aim_direction.y) < 0.05:
+		$AnimatedSprite2D.frame = 3
+	elif abs(aim_direction.x - aim_direction.y) < 0.05:
+		$AnimatedSprite2D.frame = 2
+	else:
+		$AnimatedSprite2D.frame = 1
 	
 func reflect(point: Vector2, ray: Vector2, delta, bounce: int):
 	if bounce > max_bounces or reflecting:
@@ -49,6 +59,9 @@ func reflect(point: Vector2, ray: Vector2, delta, bounce: int):
 		var collider = raycast2d.get_collider()
 		if collider != null and collider.has_method("damage"):
 			collider.damage(damage * delta)
+			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
+		if collider != null and collider.has_method("burn"):
+			collider.burn(burn_time)
 			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
 		if collider != null and collider.owner != null and collider.owner.has_method("reflect") and collider.owner != self:
 			collider.owner.reflect(raycast2d.get_collision_point(),reflect_direction,delta,bounce+1)

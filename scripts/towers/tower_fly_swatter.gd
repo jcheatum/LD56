@@ -1,6 +1,7 @@
 class_name FlySwatter extends TowerBase
 
-@export var swat_rate: float
+@export var swat_rate: float = 2
+@export var slow_time: float = 1
 
 @onready var Swatter: Node2D = $Swatter
 @onready var SwatZone: Area2D = $Swatter/SwatZone
@@ -14,6 +15,7 @@ func _process(delta: float) -> void:
 	Swatter.look_at(global_position+aim_direction)
 
 func ACTIVE_ENTER():
+	super.ACTIVE_ENTER()
 	swat_timer = swat_rate
 
 func ACTIVE_UPDATE(delta):
@@ -35,7 +37,7 @@ func ROTATING_UPDATE(_delta):
 	else:
 		aim_direction.x = -1
 		$AnimatedSprite2D.flip_h = true
-		$AnimatedSprite2D.offset.x = -60
+		$AnimatedSprite2D.offset.x = -32
 	aim_direction.y = 0
 	if Input.is_action_just_pressed("left_click"):
 			change_state(TowerState.ACTIVE)
@@ -47,11 +49,15 @@ func swat():
 	#Smoke.visible = true
 	smoke_timer = 0.3
 	$AnimatedSprite2D.play()
-	if SwatZone.has_overlapping_areas():
-		for collider in SwatZone.get_overlapping_areas():
-			if collider != null and collider.has_method("damage"):
-				collider.damage(damage)
+	
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	$AnimatedSprite2D.frame = 0
+	if SwatZone.has_overlapping_areas():
+		for collider in SwatZone.get_overlapping_areas():
+			if collider != null and collider.has_method("damage"):
+				collider.damage(damage)
+			if collider != null and collider.has_method("slow"):
+				collider.slow(slow_time)	
+			

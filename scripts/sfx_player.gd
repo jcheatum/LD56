@@ -1,7 +1,7 @@
 extends Node
 
 var audio_stream_players: Array[AudioStreamPlayer]
-var volume: float
+var volume: float = 1
 
 func _ready():
 	if ($"../Main/SettingsMenu" != null):
@@ -25,6 +25,7 @@ func PlaySoundEffect(stream :AudioStream, volume_scale: float = 1, pitch_scale: 
 		audio_stream_players.append(available_player)
 	# Play the sound
 	available_player.stream = stream
-	available_player.volume_db = volume * volume_scale
+	available_player.volume_db = linear_to_db(volume * volume_scale)
+	print(available_player.volume_db)
 	available_player.pitch_scale = pitch_scale
 	available_player.play()

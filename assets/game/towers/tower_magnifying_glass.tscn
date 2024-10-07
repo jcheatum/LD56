@@ -7,14 +7,18 @@
 [node name="Magnifying Glass" instance=ExtResource("1_0x1q2")]
 script = ExtResource("2_gwejl")
 ray_length = 2203.0
-damage = 80.0
+burn_time = 2.0
+damage = 50.0
 
 [node name="Sprite2D" parent="." index="0"]
+texture_filter = 1
 position = Vector2(0, 19)
 scale = Vector2(2, 2)
 texture = ExtResource("3_f8g07")
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="2"]
+light_mask = 10
+visibility_layer = 10
 collision_mask = 10
 collide_with_areas = true
 

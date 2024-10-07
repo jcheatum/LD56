@@ -1,11 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://st74xvi37fi8"]
+[gd_scene load_steps=12 format=3 uid="uid://st74xvi37fi8"]
 
 [ext_resource type="Script" path="res://scripts/enemies/hornet.gd" id="1_7efjj"]
-[ext_resource type="Texture2D" uid="uid://cgkwtw8g2nvnv" path="res://assets/enemies/hornet/hornet_temp_sprite.png" id="2_x5f01"]
+[ext_resource type="Texture2D" uid="uid://ptsgtade5wag" path="res://assets/sprites/enemies/Hornet.png" id="2_bu34f"]
 [ext_resource type="PackedScene" uid="uid://c1nbfn0430jp5" path="res://assets/components/health_bar/health_bar.tscn" id="3_f6xfa"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6wfs"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(0, 0, 56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqk2"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(56, 0, 56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swqrj"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(112, 0, 56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e62sl"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(0, 46, 56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st1vo"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(56, 46, 56, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1u40"]
+atlas = ExtResource("2_bu34f")
+region = Rect2(112, 46, 56, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gl55i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6wfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swqrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e62sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st1vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1u40")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uikl"]
-height = 80.0
+radius = 45.0
+height = 120.0
 
 [node name="Hornet" type="Area2D"]
 collision_layer = 3
@@ -13,18 +64,24 @@ collision_mask = 3
 script = ExtResource("1_7efjj")
 speed = 120.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.563, 0.563)
-texture = ExtResource("2_x5f01")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -56)
+scale = Vector2(3.75, 3.75)
+sprite_frames = SubResource("SpriteFrames_gl55i")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, -58)
 shape = SubResource("CapsuleShape2D_6uikl")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_f6xfa")]
 offset_left = -15.0
-offset_top = -58.0
+offset_top = -130.0
 offset_right = 105.0
-offset_bottom = -31.0
+offset_bottom = -103.0
+max_value = 250.0
+value = 250.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

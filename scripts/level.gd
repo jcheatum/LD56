@@ -74,6 +74,8 @@ func BUY_ENTER():
 	$Market.enable_market = true
 	if current_wave < $WaveSpawner.waves.size():
 		sun_angle = $WaveSpawner.waves[current_wave].sun_angle
+	$StartWave.text = "START WAVE"
+	$StartWave.modulate = Color.GREEN
 
 func BUY_UPDATE(delta):
 	pass
@@ -84,6 +86,9 @@ func BUY_EXIT():
 
 func DEFEND_ENTER():
 	$WaveSpawner.start_wave(current_wave)
+	$StartWave.text = "..."
+	$StartWave.modulate = Color.YELLOW
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/wave_start.wav"))
 
 func DEFEND_UPDATE(delta):
 	pass
