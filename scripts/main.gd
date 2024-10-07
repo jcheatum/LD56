@@ -26,7 +26,7 @@ func _on_game_finished():
 
 
 func _on_settings_menu_music_vol_set(volume):
-	$MusicPlayer.volume_db = volume
+	$MusicPlayer.volume_db = linear_to_db(volume)
 
 
 func _on_settings_menu_sfx_vol_set(volume):
