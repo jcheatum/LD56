@@ -6,6 +6,7 @@ func _ready() -> void:
 	self.navigator = $NavigationAgent2D
 	self.health_bar = $HealthBar
 	self.direction_container = $AnimatedSprite2D
+	self.bug_type="Roach"
 
 
 # Ants die when they are killed

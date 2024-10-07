@@ -7,6 +7,7 @@ func _ready() -> void:
 	self.health_bar = $HealthBar
 	self.direction_container = $AnimatedSprite2D
 	$AnimatedSprite2D.play()
+	self.bug_type="Ant"
 
 
 # Ants die when they are killed
