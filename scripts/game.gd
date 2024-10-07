@@ -4,6 +4,7 @@ signal finished
 signal paused
 
 var current_level: String
+var next_level: String
 
 func _input(event):
 	if self.visible && event.is_action_pressed("pause"):
@@ -42,3 +43,13 @@ func _on_scene_manager_scene_changed(scene_name: String) -> void:
 
 func _on_pause_menu_restart_level() -> void:
 	$SceneManager.change_scene(current_level)
+
+
+func _on_scene_manager_scene_changing(scene_name: String) -> void:
+	next_level = scene_name
+	$SceneTransitionShade.enter()
+
+
+func _on_scene_transition_shade_entrance_finished() -> void:
+	$SceneManager.change_scene(next_level)
+	$SceneTransitionShade.exit()

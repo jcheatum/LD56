@@ -6,6 +6,7 @@ signal open_settings
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ButtonsContainer/Start.grab_focus()
+	$AnimationPlayer.play("title_fly_in")
 
 
 func _on_start_pressed():
