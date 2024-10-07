@@ -9,11 +9,11 @@
 script = ExtResource("1_6rxo3")
 
 [node name="SceneManager" type="Node2D" parent="."]
-z_index = -1
 script = ExtResource("2_78b6v")
 
 [node name="LoseMenu" parent="." instance=ExtResource("3_h3yvm")]
 visible = false
+z_index = 4096
 
 [node name="SceneTransitionShade" parent="." instance=ExtResource("4_d4j5u")]
 top_level = true
