@@ -55,8 +55,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljtus"]
-radius = 4.28045
-height = 26.7302
+radius = 8.0
+height = 24.5333
 
 [node name="Ant" type="Area2D"]
 texture_filter = 1
@@ -65,23 +65,23 @@ collision_mask = 3
 script = ExtResource("1_pol85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.8147e-06, -48)
+position = Vector2(-3.8147e-06, -40)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_g32cm")
 autoplay = "default"
 frame_progress = 0.476395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -33)
-rotation = -1.07687
+position = Vector2(0, -22)
+rotation = 1.5708
 scale = Vector2(3.75, 3.75)
 shape = SubResource("CapsuleShape2D_ljtus")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_so26o")]
 offset_left = -15.0
-offset_top = -88.0
+offset_top = -80.0
 offset_right = 105.0
-offset_bottom = -61.0
+offset_bottom = -53.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

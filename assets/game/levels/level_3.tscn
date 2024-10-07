@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://qtcyjgtgopwv" path="res://assets/game/levels/level_template.tscn" id="1_bsdbj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pp2lb"]
-vertices = PackedVector2Array(1345, 505, 1345, -95, 1415, -95, 1415, 575, 695, 575, 625, 505, 625, 865, 695, 865, 1535, 865, 1535, 1175, 1465, 1175, 1465, 935, 145, 935, 455, 865, 145, 385, 215, 385, 215, 865, 145, 335, 145, -95, 215, -95, 215, 265, 385, 335, 455, 265, 385, 865)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(7, 8, 11, 12), PackedInt32Array(6, 7, 12), PackedInt32Array(13, 6, 12), PackedInt32Array(12, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 17, 20, 22), PackedInt32Array(21, 22, 13, 23), PackedInt32Array(23, 13, 12), PackedInt32Array(23, 12, 16)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(1455, 945, 1455, 1185, 1545, 1185, 1545, 855, 705, 855, 705, 585, 1425, 585, 1425, -105, 1335, -105, 1335, 495, 615, 495, 615, 855, 465, 855, 465, 255, 225, 255, 225, -105, 135, -105, 135, 345, 375, 345, 375, 855, 225, 855, 225, 375, 135, 375, 135, 945)])
+vertices = PackedVector2Array(1360, 520, 1360, -80, 1400, -80, 1400, 560, 680, 560, 640, 520, 640, 880, 680, 880.18, 1535, 865.172, 1535, 1175, 1465, 1175, 1465, 935.109, 160, 920.109, 440, 880, 160, 400, 200, 400, 200, 880, 160, 320, 160, -80, 200, -80, 200, 280, 400, 320, 440, 280, 400, 880)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(6, 5, 4, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(7, 8, 11, 12), PackedInt32Array(6, 7, 12, 13), PackedInt32Array(12, 14, 15, 16), PackedInt32Array(17, 18, 19, 20), PackedInt32Array(21, 17, 20, 22), PackedInt32Array(21, 22, 13, 23), PackedInt32Array(23, 13, 12), PackedInt32Array(23, 12, 16)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1470, 930, 1470, 1170, 1530, 1170, 1530, 870, 690, 870, 690, 570, 1410, 570, 1410, -90, 1350, -90, 1350, 510, 630, 510, 630, 870, 450, 870, 450, 270, 210, 270, 210, -90, 150, -90, 150, 330, 390, 330, 390, 870, 210, 870, 210, 390, 150, 390, 150, 930)])
 
 [node name="Level3" instance=ExtResource("1_bsdbj")]
 is_last_level = true

@@ -116,6 +116,7 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 			pass
 			#change_state(TowerState.ROTATING)
 	elif Input.is_action_just_pressed("right_click") and current_state==TowerState.ACTIVE:
+		print(name + " sold.")
 		sell_tower.emit()
 		SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/sell_tower.wav"))
 		self.queue_free()
