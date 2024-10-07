@@ -63,6 +63,8 @@ offset_right = 1774.0
 offset_bottom = 945.0
 icon = SubResource("AtlasTexture_vt0jy")
 tower_name = "Magnifying Glass"
+cost = 18
+sell_value = 12
 tower_desc = "Focuses the sun-light into a deadly beam. Changes direction based on the sun's position."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_MagnifyingGlass"]

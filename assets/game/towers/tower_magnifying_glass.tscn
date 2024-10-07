@@ -8,7 +8,7 @@
 script = ExtResource("2_gwejl")
 ray_length = 2203.0
 burn_time = 2.0
-damage = 60.0
+damage = 80.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture_filter = 1

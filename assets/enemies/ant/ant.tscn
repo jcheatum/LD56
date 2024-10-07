@@ -65,23 +65,25 @@ collision_mask = 3
 script = ExtResource("1_pol85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3.8147e-06, -40)
+position = Vector2(-3.8147e-06, -32)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_g32cm")
 autoplay = "default"
 frame_progress = 0.476395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -22)
+position = Vector2(0, -14)
 rotation = 1.5708
 scale = Vector2(3.75, 3.75)
 shape = SubResource("CapsuleShape2D_ljtus")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_so26o")]
 offset_left = -15.0
-offset_top = -80.0
+offset_top = -72.0
 offset_right = 105.0
-offset_bottom = -53.0
+offset_bottom = -45.0
+max_value = 90.0
+value = 90.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
