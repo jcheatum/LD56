@@ -1,19 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://cgmfwrdnu35nr"]
+[gd_scene load_steps=13 format=3 uid="uid://cgmfwrdnu35nr"]
 
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
 [ext_resource type="Texture2D" uid="uid://b35m6yaabb0n2" path="res://assets/sprites/ui/Background .png" id="2_04stn"]
 [ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
-[ext_resource type="Texture2D" uid="uid://c8s1pmyikcjm" path="res://assets/sprites/towers/Magnifying Glass.png" id="3_rn332"]
-[ext_resource type="Texture2D" uid="uid://dxsdmwkvjnpba" path="res://assets/sprites/towers/Swatter_icon.png" id="4_a7qwe"]
-[ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="4_uhfrn"]
+[ext_resource type="Texture2D" uid="uid://ctck8fou03ame" path="res://assets/sprites/ui/Icons.png" id="4_hvhdi"]
 [ext_resource type="Texture2D" uid="uid://oo4wfcpy40kw" path="res://assets/sprites/ui/LargeFrame.png" id="5_6mg0v"]
-[ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
-[ext_resource type="Texture2D" uid="uid://c87ul43a4govo" path="res://assets/sprites/towers/Mirror_icon.png" id="7_w5w5m"]
-[ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_63wa1"]
 atlas = ExtResource("2_04stn")
 region = Rect2(0, 0, 70, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt0jy"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7de8j"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5lr"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp5ps"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lowv"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frabq"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 64, 32, 32)
 
 [node name="Market" type="Control"]
 z_index = 2000
@@ -41,7 +60,7 @@ offset_left = 1684.0
 offset_top = 855.0
 offset_right = 1774.0
 offset_bottom = 945.0
-icon = ExtResource("3_rn332")
+icon = SubResource("AtlasTexture_vt0jy")
 tower_name = "Magnifying Glass"
 tower_desc = "Focuses the sunlight into a deadly beam in the direction the sun is facing."
 
@@ -70,7 +89,7 @@ offset_left = 1684.0
 offset_top = 735.0
 offset_right = 1774.0
 offset_bottom = 825.0
-icon = ExtResource("4_a7qwe")
+icon = SubResource("AtlasTexture_7de8j")
 tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
 tower_name = "Fly Swatter"
 cost = 24
@@ -94,7 +113,7 @@ offset_left = 1804.0
 offset_top = 735.0
 offset_right = 1894.0
 offset_bottom = 825.0
-icon = ExtResource("4_uhfrn")
+icon = SubResource("AtlasTexture_ay5lr")
 tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
 tower_name = "Lighter"
 cost = 36
@@ -117,7 +136,7 @@ offset_left = 1684.0
 offset_top = 615.0
 offset_right = 1774.0
 offset_bottom = 705.0
-icon = ExtResource("6_yghrj")
+icon = SubResource("AtlasTexture_gp5ps")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
 tower_name = "Sugar Cube"
 cost = 6
@@ -140,7 +159,7 @@ offset_left = 1804.0
 offset_top = 855.0
 offset_right = 1894.0
 offset_bottom = 945.0
-icon = ExtResource("7_w5w5m")
+icon = SubResource("AtlasTexture_2lowv")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
 cost = 6
@@ -162,7 +181,7 @@ offset_left = 1804.0
 offset_top = 615.0
 offset_right = 1894.0
 offset_bottom = 705.0
-icon = ExtResource("8_f5t8j")
+icon = SubResource("AtlasTexture_frabq")
 tower_path = "res://assets/game/towers/tower_spray.tscn"
 tower_name = "Bug Spray"
 tower_desc = "Shoots bug spray on the ground, dealing damage to bugs that pass over."
