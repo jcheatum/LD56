@@ -37,9 +37,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Restart")
 theme_override_font_sizes/font_size = 60
 text = "Resume"
+
+[node name="Restart" type="Button" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Resume")
+focus_neighbor_bottom = NodePath("../Settings")
+theme_override_font_sizes/font_size = 60
+text = "Restart Level"
 
 [node name="Settings" type="Button" parent="ButtonsContainer"]
 layout_mode = 2
@@ -69,6 +78,7 @@ theme_override_font_sizes/font_size = 60
 text = "Quit"
 
 [connection signal="pressed" from="ButtonsContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="ButtonsContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="ButtonsContainer/ToMenu" to="." method="_on_to_menu_pressed"]
 [connection signal="pressed" from="ButtonsContainer/Quit" to="." method="_on_quit_pressed"]

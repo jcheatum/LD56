@@ -38,3 +38,7 @@ func _on_lose_menu_retry() -> void:
 
 func _on_scene_manager_scene_changed(scene_name: String) -> void:
 	current_level = scene_name
+
+
+func _on_pause_menu_restart_level() -> void:
+	$SceneManager.change_scene(current_level)
