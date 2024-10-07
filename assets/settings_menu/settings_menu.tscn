@@ -61,8 +61,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 focus_neighbor_right = NodePath("../../FullscreenContainer/FullscreenCheckBox")
 focus_neighbor_bottom = NodePath("../../SfxVolContainer/SfxVolSlider")
-min_value = -80.0
-max_value = 24.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="FullscreenContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2
@@ -102,8 +103,9 @@ size_flags_vertical = 6
 focus_neighbor_top = NodePath("../../MusicVolContainer/MusicVolSlider")
 focus_neighbor_right = NodePath("../../MuteContainer/MuteCheckBox")
 focus_neighbor_bottom = NodePath("../../../DoneButton")
-min_value = -80.0
-max_value = 24.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="MuteContainer" type="GridContainer" parent="ColumnsContainer"]
 layout_mode = 2

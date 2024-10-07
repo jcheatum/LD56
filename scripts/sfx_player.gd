@@ -1,7 +1,7 @@
 extends Node
 
 var audio_stream_players: Array[AudioStreamPlayer]
-var volume: float = 1
+var volume: float = .5
 
 func _ready():
 	if ($"../Main/SettingsMenu" != null):
