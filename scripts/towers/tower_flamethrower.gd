@@ -2,6 +2,7 @@ class_name Flamethrower extends TowerBase
 
 @export var on_timer: float
 @export var off_timer: float
+@export var burn_time: float = 5
 
 @onready var Flame: Node2D = $Flame
 @onready var FlameZone: Area2D = $Flame/FlameZone
@@ -17,6 +18,7 @@ func _process(delta: float) -> void:
 	self.look_at(global_position+aim_direction)
 
 func ACTIVE_ENTER():
+	super.ACTIVE_ENTER()
 	timer = off_timer
 	flame_off()
 
@@ -34,6 +36,8 @@ func ACTIVE_UPDATE(delta):
 		for collider in FlameZone.get_overlapping_areas():
 			if collider != null and collider.has_method("damage"):
 				collider.damage(damage*delta)
+			if burn_time > 0 and collider != null and collider.has_method("burn"):
+				collider.burn(burn_time)
 
 func ROTATING_UPDATE(_delta):
 	# Lock orientation

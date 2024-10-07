@@ -14,13 +14,13 @@ script = ExtResource("1_kkvjl")
 
 [node name="Blanket" type="Sprite2D" parent="."]
 rotation = -1.5708
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("2_dgp6t")
 region_enabled = true
 region_rect = Rect2(0, 0, 59.1171, 81.0181)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(3, 3)
 texture = ExtResource("1_dov6q")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -29,10 +29,10 @@ texture = ExtResource("1_dov6q")
 shape = SubResource("RectangleShape2D_j7lax")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_ajklo")]
-offset_left = -60.0
-offset_top = -70.0
-offset_right = 420.0
-offset_bottom = -43.0
+offset_left = -64.0
+offset_top = 60.0
+offset_right = 448.0
+offset_bottom = 108.0
 max_value = 500.0
 value = 500.0
 

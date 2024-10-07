@@ -1,4 +1,4 @@
-extends Node2D
+class_name PicnicBasket extends Node2D
 
 var enemies_attacking: int = 0
 

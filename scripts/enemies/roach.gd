@@ -5,7 +5,7 @@ class_name Roach extends Bug
 func _ready() -> void:
 	self.navigator = $NavigationAgent2D
 	self.health_bar = $HealthBar
-	self.direction_container = $Sprite2D
+	self.direction_container = $AnimatedSprite2D
 
 
 # Ants die when they are killed

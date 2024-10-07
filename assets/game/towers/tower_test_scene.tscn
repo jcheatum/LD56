@@ -11,6 +11,7 @@
 position = Vector2(505, 348)
 collision_layer = 1
 collision_mask = 1
+burn_time = 3.0
 
 [node name="Ant3" parent="." instance=ExtResource("2_641sc")]
 position = Vector2(1100, 305)
@@ -23,14 +24,10 @@ position = Vector2(624, 431)
 
 [node name="Fly Swatter" parent="." instance=ExtResource("3_iih3y")]
 position = Vector2(1078, 176)
-collision_layer = 1
-collision_mask = 1
 movable = true
 
 [node name="Fly Swatter2" parent="." instance=ExtResource("3_iih3y")]
 position = Vector2(1041, 542)
-collision_layer = 1
-collision_mask = 1
 
 [node name="Flamethrower" parent="." instance=ExtResource("4_bmobu")]
 position = Vector2(1025, 394)

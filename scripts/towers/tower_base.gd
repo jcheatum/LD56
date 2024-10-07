@@ -40,6 +40,9 @@ func _process(delta):
 			ROTATING_UPDATE(delta)
 		TowerState.ACTIVE:
 			ACTIVE_UPDATE(delta)
+	# z index
+	z_as_relative = false
+	z_index = global_position.y
 
 func change_state(new_state: TowerState):
 	print("Tower State Change: " + TowerState.keys()[current_state] + "->" + TowerState.keys()[new_state])
@@ -114,6 +117,7 @@ func _input_event(_viewport: Viewport, _event: InputEvent, _shape_idx: int) -> v
 			#change_state(TowerState.ROTATING)
 	elif Input.is_action_just_pressed("right_click") and current_state==TowerState.ACTIVE:
 		sell_tower.emit()
+		SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/sell_tower.wav"))
 		self.queue_free()
 
 func in_bounds(pos: Vector2) -> bool:
