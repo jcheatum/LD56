@@ -209,7 +209,13 @@ offset_top = 255.0
 offset_right = 1894.0
 offset_bottom = 585.0
 
-[node name="Name" type="Label" parent="TowerInfoPanel"]
+[node name="Container" type="Control" parent="TowerInfoPanel"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Name" type="Label" parent="TowerInfoPanel/Container"]
 layout_mode = 0
 offset_left = 15.0
 offset_right = 195.0
@@ -220,7 +226,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Cost" type="Label" parent="TowerInfoPanel"]
+[node name="Cost" type="Label" parent="TowerInfoPanel/Container"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 105.0
@@ -230,7 +236,7 @@ theme_override_font_sizes/font_size = 18
 text = "Cost:"
 autowrap_mode = 2
 
-[node name="SellPrice" type="Label" parent="TowerInfoPanel"]
+[node name="SellPrice" type="Label" parent="TowerInfoPanel/Container"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 135.0
@@ -240,7 +246,7 @@ theme_override_font_sizes/font_size = 18
 text = "Sell Price:"
 autowrap_mode = 2
 
-[node name="Description" type="Label" parent="TowerInfoPanel"]
+[node name="Description" type="Label" parent="TowerInfoPanel/Container"]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 165.0
@@ -250,4 +256,25 @@ theme_override_font_sizes/font_size = 18
 text = "blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah"
 autowrap_mode = 2
 
+[node name="Controls" type="Label" parent="TowerInfoPanel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 203.0
+offset_bottom = 322.0
+text = "Controls:
+========
+- Click on an item below to buy it, then click on the map to place it.
+
+- Right click an item on the map to sell it.
+
+- Once you're ready to start the wave, press \"START WAVE\"."
+autowrap_mode = 3
+
 [connection signal="mouse_entered" from="MarketItem_MagnifyingGlass" to="TowerInfoPanel" method="_on_market_item_magnifying_glass_mouse_entered"]
+[connection signal="mouse_exited" from="MarketItem_MagnifyingGlass" to="." method="_on_market_item_mouse_exited"]
+[connection signal="mouse_exited" from="MarketItem_Swatter" to="." method="_on_market_item_mouse_exited"]
+[connection signal="mouse_exited" from="MarketItem_Flame" to="." method="_on_market_item_mouse_exited"]
+[connection signal="mouse_exited" from="MarketItem_Sugar" to="." method="_on_market_item_mouse_exited"]
+[connection signal="mouse_exited" from="MarketItem_Mirror" to="." method="_on_market_item_mouse_exited"]
+[connection signal="mouse_exited" from="MarketItem_Spray" to="." method="_on_market_item_mouse_exited"]
