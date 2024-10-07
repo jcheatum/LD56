@@ -31,9 +31,6 @@ position = Vector2(-37, -780)
 [node name="SpawnPoint2" type="Node2D" parent="WaveSpawner" index="1"]
 position = Vector2(548, -1005)
 
-[node name="Market" parent="." index="4"]
-initial_money = 72
-
 [node name="StartWave" parent="." index="5"]
 z_index = 4000
 z_as_relative = false
