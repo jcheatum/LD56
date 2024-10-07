@@ -16,6 +16,7 @@ func _ready():
 	scenes["level_3"] = preload("res://assets/game/levels/level_3.tscn")
 
 func change_scene(scene_name: String):
+	scene_changed.emit(scene_name)
 	assert(scenes.has(scene_name), "Scene " + scene_name + " not found in SceneManager!")
 	var instance: Node2D = scenes[scene_name].instantiate()
 	add_child(instance)
@@ -28,8 +29,6 @@ func change_scene(scene_name: String):
 	
 func _on_active_scene_change_scene(scene_name: String):
 	scene_changing.emit(scene_name)
-	#change_scene(scene_name)
-	#scene_changed.emit(scene_name)
 
 
 func return_to_main_menu():
