@@ -21,6 +21,7 @@ metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1088.0
 texture = ExtResource("2_8giqv")
