@@ -62,7 +62,7 @@ offset_right = 1774.0
 offset_bottom = 945.0
 icon = SubResource("AtlasTexture_vt0jy")
 tower_name = "Magnifying Glass"
-tower_desc = "Focuses the sunlight into a deadly beam in the direction the sun is facing."
+tower_desc = "Focuses the sun-light into a deadly beam. Changes direction based on the sun's position."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_MagnifyingGlass"]
 texture_filter = 1
@@ -94,7 +94,7 @@ tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
 tower_name = "Fly Swatter"
 cost = 24
 sell_value = 12
-tower_desc = "Repeatedly swats the ground, damaging any bugs in the area."
+tower_desc = "Swats at the ground, damaging bugs and slowing them down temporarily."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Swatter"]
 texture_filter = 1
@@ -118,7 +118,7 @@ tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
 tower_name = "Lighter"
 cost = 36
 sell_value = 18
-tower_desc = "Emits a deadly flame, dealing damage over time to any bug in the area."
+tower_desc = "Shoots a deadly flame, damaging bugs and leaving them to burn temporarily."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Flame"]
 texture_filter = 1
@@ -163,7 +163,7 @@ icon = SubResource("AtlasTexture_2lowv")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
 cost = 6
-tower_desc = "Reflects beams of light from magnifying glasses. Can be chained together."
+tower_desc = "Redirect a beam of light from a magnifying glass. Can be chained together."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Mirror"]
 texture_filter = 1
@@ -184,7 +184,7 @@ offset_bottom = 705.0
 icon = SubResource("AtlasTexture_frabq")
 tower_path = "res://assets/game/towers/tower_spray.tscn"
 tower_name = "Bug Spray"
-tower_desc = "Shoots bug spray on the ground, dealing damage to bugs that pass over."
+tower_desc = "Shoots bug spray, damaging bugs as they pass through."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Spray"]
 texture_filter = 1
@@ -206,11 +206,10 @@ offset_bottom = 585.0
 [node name="Name" type="Label" parent="TowerInfoPanel"]
 layout_mode = 0
 offset_left = 15.0
-offset_top = 15.0
 offset_right = 195.0
-offset_bottom = 90.0
-theme_override_font_sizes/font_size = 24
-text = "Super Cool Tower"
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 30
+text = "Magnifying Glass"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

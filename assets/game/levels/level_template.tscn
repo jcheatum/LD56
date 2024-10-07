@@ -1,14 +1,29 @@
 [gd_scene load_steps=26 format=3 uid="uid://qtcyjgtgopwv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bf40j"]
+[ext_resource type="Texture2D" uid="uid://c6ve6gtifx4v5" path="res://assets/sprites/environment/Grass_summer.png" id="2_fldi8"]
 [ext_resource type="Texture2D" uid="uid://cq4ue11t77mhw" path="res://assets/sprites/environment/Grass.png" id="2_l81vt"]
 [ext_resource type="Texture2D" uid="uid://bhry2banyyoqp" path="res://assets/sprites/environment/DirtPath.png" id="3_4p40e"]
+[ext_resource type="Texture2D" uid="uid://q3s0t8xmrkiq" path="res://assets/sprites/environment/Grass_fall.png" id="4_fxd4m"]
 [ext_resource type="PackedScene" uid="uid://c6yd50smba556" path="res://assets/game/picnic_basket/picnic_basket.tscn" id="4_vnvhu"]
 [ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="5_7ui3m"]
 [ext_resource type="PackedScene" uid="uid://cgmfwrdnu35nr" path="res://assets/game/market/market.tscn" id="6_shtq4"]
 [ext_resource type="Texture2D" uid="uid://cs0jnou8kbi0w" path="res://assets/sprites/ui/Buttons.png" id="7_b42sb"]
 [ext_resource type="Texture2D" uid="uid://c1x3gcspk5ntg" path="res://assets/sprites/ui/Sun.png" id="8_drxa7"]
 [ext_resource type="Script" path="res://scripts/sun.gd" id="9_a2wfv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tpk3m"]
+texture = ExtResource("2_fldi8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxkws"]
 texture = ExtResource("2_l81vt")
@@ -23,9 +38,24 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 1:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_byruc"]
+texture = ExtResource("4_fxd4m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_sos6o"]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_dxkws")
+sources/0 = SubResource("TileSetAtlasSource_tpk3m")
+sources/2 = SubResource("TileSetAtlasSource_byruc")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njmge"]
 texture = ExtResource("3_4p40e")

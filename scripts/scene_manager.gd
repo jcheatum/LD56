@@ -30,11 +30,10 @@ func change_scene(scene_name: String):
 func _on_active_scene_change_scene(scene_name: String):
 	scene_changing.emit(scene_name)
 
-
 func return_to_main_menu():
 	if (active_scene != null):
 		active_scene.queue_free()
-	return_to_menu.emit()
+	#return_to_menu.emit()
 
 func _on_active_scene_lose():
 	player_lost.emit()

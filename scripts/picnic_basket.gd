@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 
 func _on_damage_timer_timeout() -> void:
 	$HealthBar.damage(10 * enemies_attacking)
+	if enemies_attacking > 0: SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/bite.wav"))
+	$AnimatedSprite2D.frame = ceil(($HealthBar.value/$HealthBar.max_value) * 5)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

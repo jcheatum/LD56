@@ -60,7 +60,7 @@ animations = [{
 
 [node name="Flamethrower" instance=ExtResource("1_k3mb8")]
 script = ExtResource("2_k24ie")
-on_timer = 3.89
+on_timer = 4.0
 off_timer = 3.0
 burn_time = 5.0
 rotatable = true
@@ -75,7 +75,7 @@ texture = ExtResource("3_1a2lq")
 
 [node name="FlameZone" type="Area2D" parent="Flame" index="0"]
 position = Vector2(117, 0)
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flame/FlameZone" index="0"]

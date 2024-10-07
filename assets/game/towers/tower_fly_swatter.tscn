@@ -54,10 +54,10 @@ size = Vector2(150, 150)
 
 [node name="Fly Swatter" instance=ExtResource("1_qk1or")]
 collision_layer = 1
-collision_mask = 1
+collision_mask = 0
 script = ExtResource("2_4io40")
 swat_rate = 3.0
-slow_time = 1.0
+slow_time = 2.0
 rotatable = true
 damage = 30.0
 
@@ -76,7 +76,7 @@ sprite_frames = SubResource("SpriteFrames_0blej")
 
 [node name="SwatZone" type="Area2D" parent="Swatter" index="0"]
 position = Vector2(120, 0)
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Swatter/SwatZone" index="0"]
