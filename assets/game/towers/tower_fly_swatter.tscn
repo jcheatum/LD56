@@ -59,7 +59,7 @@ script = ExtResource("2_4io40")
 swat_rate = 2.1
 slow_time = 2.0
 rotatable = true
-damage = 25.0
+damage = 45.0
 
 [node name="Sprite2D" parent="." index="0"]
 visible = false

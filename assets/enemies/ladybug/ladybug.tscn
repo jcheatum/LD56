@@ -55,34 +55,33 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5j8e"]
-radius = 49.5782
+radius = 52.4976
 
 [node name="Ladybug" type="Area2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_wev5w")
-speed = 50.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -40)
+position = Vector2(0, -32)
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_2t8ey")
 autoplay = "default"
 frame_progress = 0.396816
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -35)
+position = Vector2(0, -27)
 rotation = -0.837758
 shape = SubResource("CircleShape2D_h5j8e")
 
 [node name="HealthBar" parent="." instance=ExtResource("3_ot80v")]
 offset_left = -15.0
-offset_top = -95.0
+offset_top = -87.0
 offset_right = 105.0
-offset_bottom = -68.0
-max_value = 600.0
-value = 600.0
+offset_bottom = -60.0
+max_value = 480.0
+value = 480.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 

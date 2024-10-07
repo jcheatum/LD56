@@ -57,7 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7lax"]
-size = Vector2(112, 112)
+size = Vector2(120, 120)
 
 [node name="PicnicBasket" type="Node2D"]
 texture_filter = 1

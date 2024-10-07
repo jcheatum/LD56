@@ -25,6 +25,7 @@ func return_to_menu():
 
 func _on_lose_menu_exit() -> void:
 	get_tree().paused = false
+	$SceneManager.return_to_main_menu()
 	finished.emit()
 
 
