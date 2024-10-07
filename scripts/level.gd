@@ -16,6 +16,7 @@ var sun_angle: float = 0
 var current_wave: int = 0
 
 func _ready():
+	$Market.set_background_texture(0)
 	$WaveSpawner.wave_done.connect(wave_done)
 	$PicnicBasket.dead.connect(_on_picnic_basket_dead)
 	match current_state:
@@ -97,6 +98,7 @@ func DEFEND_EXIT():
 	if current_wave < $WaveSpawner.waves.size():
 		$Market.money += $WaveSpawner.waves[current_wave].reward_money
 	current_wave += 1
+	$Market.set_background_texture(current_wave)
 	
 	
 func WIN_ENTER():

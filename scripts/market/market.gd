@@ -19,3 +19,7 @@ func show_tower_info(name: String, cost: int, sell_price: int, description: Stri
 	$TowerInfoPanel/Cost.text = "Cost: $" + str(cost)
 	$TowerInfoPanel/SellPrice.text = "Sell Price: $" + str(sell_price)
 	$TowerInfoPanel/Description.text = description
+
+func set_background_texture(index: int):
+	index = index % 3
+	$TextureRect.texture.region.position.x = index * $TextureRect.texture.region.size.x
