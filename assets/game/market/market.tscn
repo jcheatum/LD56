@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxsdmwkvjnpba" path="res://assets/sprites/towers/Swatter_icon.png" id="4_a7qwe"]
 [ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="4_uhfrn"]
 [ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
-[ext_resource type="Texture2D" uid="uid://bu25eol1t1h8" path="res://assets/sprites/towers/Mirror.png" id="7_s4vwu"]
+[ext_resource type="Texture2D" uid="uid://c87ul43a4govo" path="res://assets/sprites/towers/Mirror_icon.png" id="7_w5w5m"]
 [ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
 
 [node name="Market" type="Control"]
@@ -92,7 +92,7 @@ offset_left = 1815.0
 offset_top = 855.0
 offset_right = 1905.0
 offset_bottom = 945.0
-icon = ExtResource("7_s4vwu")
+icon = ExtResource("7_w5w5m")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
 cost = 6
