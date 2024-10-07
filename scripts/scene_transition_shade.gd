@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 signal entrance_finished
 signal exit_finished

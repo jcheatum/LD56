@@ -9,6 +9,7 @@
 script = ExtResource("1_6rxo3")
 
 [node name="SceneManager" type="Node2D" parent="."]
+z_index = -1
 script = ExtResource("2_78b6v")
 
 [node name="LoseMenu" parent="." instance=ExtResource("3_h3yvm")]
@@ -16,7 +17,7 @@ visible = false
 
 [node name="SceneTransitionShade" parent="." instance=ExtResource("4_d4j5u")]
 top_level = true
-z_index = 999
+z_index = 4096
 
 [connection signal="player_lost" from="SceneManager" to="." method="_on_scene_manager_player_lost"]
 [connection signal="scene_changed" from="SceneManager" to="." method="_on_scene_manager_scene_changed"]

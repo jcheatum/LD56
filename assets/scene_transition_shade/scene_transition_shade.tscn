@@ -94,7 +94,9 @@ _data = {
 "exit": SubResource("Animation_unjah")
 }
 
-[node name="SceneTransitionShade" type="Node2D"]
+[node name="SceneTransitionShade" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_1dmox")
 
 [node name="Container" type="Node2D" parent="."]
