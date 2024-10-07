@@ -17,6 +17,7 @@ func _on_button_down() -> void:
 		instance.pickup_tower.connect(_on_pickup_tower)
 		owner.add_sibling(instance)
 		market.money -= cost
+		SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/buy_tower.wav"))
 
 func _on_sell_tower():
 	market.money += sell_value

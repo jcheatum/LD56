@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://iyrx32kbvvls" path="res://assets/game/towers/tower_magnifying_glass.tscn" id="1_vtdii"]
 [ext_resource type="PackedScene" uid="uid://b45go3rn4wxs0" path="res://assets/enemies/ant/ant.tscn" id="2_641sc"]
-[ext_resource type="PackedScene" uid="uid://cir45ccvk4qka" path="res://assets/game/towers/tower_fly_swatter.tscn" id="3_iih3y"]
-[ext_resource type="PackedScene" uid="uid://cbsivqvqcxosi" path="res://assets/game/towers/tower_flamethrower.tscn" id="4_bmobu"]
+[ext_resource type="PackedScene" uid="uid://vytgk24hnpyn" path="res://assets/game/towers/tower_fly_swatter.tscn" id="3_iih3y"]
+[ext_resource type="PackedScene" uid="uid://cllnb76d6v0cx" path="res://assets/game/towers/tower_flamethrower.tscn" id="4_bmobu"]
 
 [node name="JakeTestScene" type="Node2D"]
 

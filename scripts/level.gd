@@ -79,7 +79,8 @@ func BUY_UPDATE(delta):
 	pass
 
 func BUY_EXIT():
-	$Market.enable_market = false
+	#$Market.enable_market = false
+	pass
 
 func DEFEND_ENTER():
 	$WaveSpawner.start_wave(current_wave)
@@ -94,6 +95,7 @@ func DEFEND_EXIT():
 	
 	
 func WIN_ENTER():
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/wave_win.wav"))
 	change_state(LevelState.BUY)
 
 func WIN_UPDATE(delta):
@@ -115,7 +117,7 @@ func FAIL_EXIT():
 	pass
 
 func _on_start_wave_pressed() -> void:
-	if current_state == LevelState.BUY and $Market.enable_market == true:
+	if current_state == LevelState.BUY:
 		change_state(LevelState.DEFEND)
 
 

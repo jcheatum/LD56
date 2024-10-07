@@ -30,7 +30,8 @@ func _on_settings_menu_music_vol_set(volume):
 
 
 func _on_settings_menu_sfx_vol_set(volume):
-	$SfxPlayer2D.volume_db = volume
+	#$SfxPlayer2D.volume_db = volume
+	pass
 
 
 func _on_game_paused():

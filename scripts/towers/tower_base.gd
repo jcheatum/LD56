@@ -97,7 +97,7 @@ func ROTATING_EXIT():
 	$Line2D.visible = false
 
 func ACTIVE_ENTER():
-	pass
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/tower_place.wav"))
 	
 func ACTIVE_UPDATE(_delta):
 	pass
