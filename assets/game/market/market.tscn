@@ -1,13 +1,38 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgmfwrdnu35nr"]
+[gd_scene load_steps=13 format=3 uid="uid://cgmfwrdnu35nr"]
 
 [ext_resource type="Script" path="res://scripts/market/market.gd" id="1_iqbx2"]
+[ext_resource type="Texture2D" uid="uid://b35m6yaabb0n2" path="res://assets/sprites/ui/Background .png" id="2_04stn"]
 [ext_resource type="PackedScene" uid="uid://cl31w8ioka2uy" path="res://assets/game/market/market_item.tscn" id="2_pwd30"]
-[ext_resource type="Texture2D" uid="uid://c8s1pmyikcjm" path="res://assets/sprites/towers/Magnifying Glass.png" id="3_rn332"]
-[ext_resource type="Texture2D" uid="uid://dxsdmwkvjnpba" path="res://assets/sprites/towers/Swatter_icon.png" id="4_a7qwe"]
-[ext_resource type="Texture2D" uid="uid://b1m1264ujmcb3" path="res://assets/sprites/towers/Zippo.png" id="4_uhfrn"]
-[ext_resource type="Texture2D" uid="uid://1lv8gaa2as1h" path="res://assets/sprites/towers/sugar_cube_icon.png" id="6_yghrj"]
-[ext_resource type="Texture2D" uid="uid://c87ul43a4govo" path="res://assets/sprites/towers/Mirror_icon.png" id="7_w5w5m"]
-[ext_resource type="Texture2D" uid="uid://eiipul47m87y" path="res://assets/sprites/towers/spray_icon.png" id="8_f5t8j"]
+[ext_resource type="Texture2D" uid="uid://ctck8fou03ame" path="res://assets/sprites/ui/Icons.png" id="4_hvhdi"]
+[ext_resource type="Texture2D" uid="uid://oo4wfcpy40kw" path="res://assets/sprites/ui/LargeFrame.png" id="5_6mg0v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63wa1"]
+atlas = ExtResource("2_04stn")
+region = Rect2(0, 0, 70, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt0jy"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7de8j"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay5lr"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp5ps"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lowv"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frabq"]
+atlas = ExtResource("4_hvhdi")
+region = Rect2(0, 64, 32, 32)
 
 [node name="Market" type="Control"]
 z_index = 2000
@@ -20,28 +45,41 @@ script = ExtResource("1_iqbx2")
 initial_money = 100
 enable_market = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 1680.0
-offset_right = 1920.0
+offset_left = 1658.0
+offset_right = 1923.0
 offset_bottom = 1080.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_group_ = true
+texture = SubResource("AtlasTexture_63wa1")
+expand_mode = 4
+stretch_mode = 4
 
 [node name="MarketItem_MagnifyingGlass" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1695.0
-offset_top = 615.0
-offset_right = 1785.0
-offset_bottom = 705.0
-icon = ExtResource("3_rn332")
+offset_left = 1684.0
+offset_top = 855.0
+offset_right = 1774.0
+offset_bottom = 945.0
+icon = SubResource("AtlasTexture_vt0jy")
 tower_name = "Magnifying Glass"
 tower_desc = "Focuses the sun-light into a deadly beam. Changes direction based on the sun's position."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_MagnifyingGlass"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1695.0
-offset_right = 1906.0
+offset_left = 1684.0
+offset_right = 1895.0
 offset_bottom = 88.0
 theme_override_font_sizes/font_size = 64
 text = "$0"
@@ -49,71 +87,126 @@ horizontal_alignment = 2
 
 [node name="MarketItem_Swatter" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1815.0
+offset_left = 1684.0
 offset_top = 735.0
-offset_right = 1905.0
+offset_right = 1774.0
 offset_bottom = 825.0
-icon = ExtResource("4_a7qwe")
+icon = SubResource("AtlasTexture_7de8j")
 tower_path = "res://assets/game/towers/tower_fly_swatter.tscn"
 tower_name = "Fly Swatter"
 cost = 24
 sell_value = 12
 tower_desc = "Swats at the ground, damaging bugs and slowing them down temporarily."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_Swatter"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MarketItem_Flame" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1815.0
-offset_top = 855.0
-offset_right = 1905.0
-offset_bottom = 945.0
-icon = ExtResource("4_uhfrn")
+offset_left = 1804.0
+offset_top = 735.0
+offset_right = 1894.0
+offset_bottom = 825.0
+icon = SubResource("AtlasTexture_ay5lr")
 tower_path = "res://assets/game/towers/tower_flamethrower.tscn"
 tower_name = "Lighter"
 cost = 36
 sell_value = 18
 tower_desc = "Shoots a deadly flame, damaging bugs and leaving them to burn temporarily."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_Flame"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MarketItem_Sugar" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1695.0
-offset_top = 855.0
-offset_right = 1785.0
-offset_bottom = 945.0
-icon = ExtResource("6_yghrj")
+offset_left = 1684.0
+offset_top = 615.0
+offset_right = 1774.0
+offset_bottom = 705.0
+icon = SubResource("AtlasTexture_gp5ps")
 tower_path = "res://assets/game/towers/tower_sugar.tscn"
 tower_name = "Sugar Cube"
 cost = 6
 sell_value = 0
 tower_desc = "Can be placed on the path to block it, until the bugs eat through it."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_Sugar"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MarketItem_Mirror" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1815.0
-offset_top = 615.0
-offset_right = 1905.0
-offset_bottom = 705.0
-icon = ExtResource("7_w5w5m")
+offset_left = 1804.0
+offset_top = 855.0
+offset_right = 1894.0
+offset_bottom = 945.0
+icon = SubResource("AtlasTexture_2lowv")
 tower_path = "res://assets/game/towers/tower_mirror.tscn"
 tower_name = "Mirror"
 cost = 6
 tower_desc = "Redirect a beam of light from a magnifying glass. Can be chained together."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_Mirror"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="MarketItem_Spray" parent="." instance=ExtResource("2_pwd30")]
 layout_mode = 0
-offset_left = 1695.0
-offset_top = 735.0
-offset_right = 1785.0
-offset_bottom = 825.0
-icon = ExtResource("8_f5t8j")
+offset_left = 1804.0
+offset_top = 615.0
+offset_right = 1894.0
+offset_bottom = 705.0
+icon = SubResource("AtlasTexture_frabq")
 tower_path = "res://assets/game/towers/tower_spray.tscn"
 tower_name = "Bug Spray"
 tower_desc = "Shoots bug spray, damaging bugs as they pass through."
 
+[node name="TextureRect" type="TextureRect" parent="MarketItem_Spray"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -11.0
+offset_top = -10.0
+offset_right = 98.0
+offset_bottom = 99.0
+texture = ExtResource("5_6mg0v")
+expand_mode = 2
+stretch_mode = 4
+
 [node name="TowerInfoPanel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1695.0
+offset_left = 1684.0
 offset_top = 255.0
-offset_right = 1905.0
+offset_right = 1894.0
 offset_bottom = 585.0
 
 [node name="Name" type="Label" parent="TowerInfoPanel"]
