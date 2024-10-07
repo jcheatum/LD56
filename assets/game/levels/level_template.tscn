@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://qtcyjgtgopwv"]
+[gd_scene load_steps=30 format=3 uid="uid://qtcyjgtgopwv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bf40j"]
 [ext_resource type="Texture2D" uid="uid://c6ve6gtifx4v5" path="res://assets/sprites/environment/Grass_summer.png" id="2_fldi8"]

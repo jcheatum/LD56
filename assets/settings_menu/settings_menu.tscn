@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_8rpy5"]
 [ext_resource type="Texture2D" uid="uid://dgto4d1u4goyq" path="res://assets/sprites/Main.png" id="2_8giqv"]
-[ext_resource type="Theme" uid="uid://ejx1e26w2ww1" path="res://assets/button_theme.tres" id="3_l6g4b"]
+[ext_resource type="Theme" uid="uid://dil3k0brh5053" path="res://assets/button_theme.tres" id="3_l6g4b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_osmpe"]
 font_size = 150

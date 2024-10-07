@@ -47,6 +47,7 @@ enable_market = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 1658.0
 offset_right = 1923.0
 offset_bottom = 1080.0
@@ -66,6 +67,7 @@ tower_desc = "Focuses the sun-light into a deadly beam. Changes direction based 
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_MagnifyingGlass"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -11.0
 offset_top = -10.0
 offset_right = 98.0
@@ -122,6 +124,7 @@ tower_desc = "Shoots a deadly flame, damaging bugs and leaving them to burn temp
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Flame"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -11.0
 offset_top = -10.0
 offset_right = 98.0
@@ -145,6 +148,7 @@ tower_desc = "Can be placed on the path to block it, until the bugs eat through 
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Sugar"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -11.0
 offset_top = -10.0
 offset_right = 98.0
@@ -167,6 +171,7 @@ tower_desc = "Redirect a beam of light from a magnifying glass. Can be chained t
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Mirror"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -11.0
 offset_top = -10.0
 offset_right = 98.0
@@ -188,6 +193,7 @@ tower_desc = "Shoots bug spray, damaging bugs as they pass through."
 
 [node name="TextureRect" type="TextureRect" parent="MarketItem_Spray"]
 texture_filter = 1
+layout_mode = 0
 offset_left = -11.0
 offset_top = -10.0
 offset_right = 98.0
