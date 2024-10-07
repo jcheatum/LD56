@@ -14,6 +14,7 @@ func _ready():
 	
 
 func _on_mute_check_box_toggled(toggled_on):
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	if toggled_on:
 		music_value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.value
 		sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
@@ -25,10 +26,12 @@ func _on_mute_check_box_toggled(toggled_on):
 
 
 func _on_done_button_pressed():
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	done.emit()
 
 
 func _on_fullscreen_check_box_toggled(toggled_on):
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
@@ -48,11 +51,13 @@ func _on_main_menu_open_settings():
 
 
 func _on_music_vol_slider_drag_ended(value_changed):
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	if value_changed:
 		music_value = $ColumnsContainer/MusicVolContainer/MusicVolSlider.value
 
 
 func _on_sfx_vol_slider_drag_ended(value_changed):
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	if value_changed:
 		sfx_value = $ColumnsContainer/SfxVolContainer/SfxVolSlider.value
 

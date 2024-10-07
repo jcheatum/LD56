@@ -14,7 +14,7 @@ var burned: bool = false
 
 func _physics_process(delta: float) -> void:
 	for area in get_overlapping_areas():
-		if area is Sugar:
+		if area is Sugar and area.is_active():
 			area.eat_sugar(delta)
 			return
 		elif area.owner != null and area.owner is PicnicBasket:

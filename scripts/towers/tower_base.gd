@@ -132,3 +132,7 @@ func in_bounds(pos: Vector2) -> bool:
 	else:
 		return true
 	
+func is_active() -> bool:
+	if current_state == TowerState.ACTIVE:
+		return true
+	return false
