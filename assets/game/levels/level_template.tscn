@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qtcyjgtgopwv"]
+[gd_scene load_steps=22 format=3 uid="uid://qtcyjgtgopwv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bf40j"]
 [ext_resource type="Texture2D" uid="uid://cq4ue11t77mhw" path="res://assets/sprites/environment/Grass.png" id="2_l81vt"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6yd50smba556" path="res://assets/game/picnic_basket/picnic_basket.tscn" id="4_vnvhu"]
 [ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="5_7ui3m"]
 [ext_resource type="PackedScene" uid="uid://cgmfwrdnu35nr" path="res://assets/game/market/market.tscn" id="6_shtq4"]
+[ext_resource type="Texture2D" uid="uid://cs0jnou8kbi0w" path="res://assets/sprites/ui/Buttons.png" id="7_b42sb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxkws"]
 texture = ExtResource("2_l81vt")
@@ -52,6 +53,45 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_njmge")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lagp1"]
+atlas = ExtResource("7_b42sb")
+region = Rect2(32, 16, 32, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qtw1i"]
+texture = SubResource("AtlasTexture_lagp1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vew2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrrfs"]
+atlas = ExtResource("7_b42sb")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mrlgc"]
+texture = SubResource("AtlasTexture_yrrfs")
+modulate_color = Color(0.8, 0.8, 0.8, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o6pu"]
+atlas = ExtResource("7_b42sb")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emixs"]
+texture = SubResource("AtlasTexture_0o6pu")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu45i"]
+atlas = ExtResource("7_b42sb")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e88a2"]
+texture = SubResource("AtlasTexture_cu45i")
+modulate_color = Color(0.666667, 0.666667, 0.666667, 1)
+
+[sub_resource type="Theme" id="Theme_i136g"]
+Button/styles/disabled = SubResource("StyleBoxTexture_qtw1i")
+Button/styles/focus = SubResource("StyleBoxEmpty_vew2r")
+Button/styles/hover = SubResource("StyleBoxTexture_mrlgc")
+Button/styles/normal = SubResource("StyleBoxTexture_emixs")
+Button/styles/pressed = SubResource("StyleBoxTexture_e88a2")
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_bf40j")
 
@@ -79,12 +119,13 @@ position = Vector2(-37, -60)
 initial_money = 48
 
 [node name="StartWave" type="Button" parent="."]
-modulate = Color(0, 1, 0, 1)
-offset_left = 1695.0
+texture_filter = 1
+offset_left = 1683.0
 offset_top = 975.0
-offset_right = 1905.0
+offset_right = 1893.0
 offset_bottom = 1065.0
-theme_override_font_sizes/font_size = 32
+theme = SubResource("Theme_i136g")
+theme_override_font_sizes/font_size = 28
 text = "START WAVE"
 
 [connection signal="pressed" from="StartWave" to="." method="_on_start_wave_pressed"]
