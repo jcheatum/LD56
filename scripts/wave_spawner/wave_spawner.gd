@@ -61,7 +61,7 @@ func spawn_bug():
 	instance.global_position.x += randf_range(-spawn_range, spawn_range)
 	instance.global_position.y += randf_range(-spawn_range, spawn_range)
 	
-func _on_bug_death():
+func _on_bug_death(bug_position: Vector2):
 	enemy_count -= 1
 	if enemy_count <= 0 and bug_queue.size() <= 0:
 		wave_done.emit()

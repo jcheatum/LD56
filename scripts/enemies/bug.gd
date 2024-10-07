@@ -1,6 +1,6 @@
 class_name Bug extends Area2D
 
-signal bug_died
+signal bug_died(position: Vector2)
 
 @export var speed: float = 70.0
 @export var burn_damage: float = 10.0
@@ -43,7 +43,7 @@ func set_target(location: Vector2) -> void:
 
 # Pretty self explanitory
 func die() -> void:
-	bug_died.emit()
+	bug_died.emit(position)
 	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/bug_death.wav"))
 	self.queue_free()
 
