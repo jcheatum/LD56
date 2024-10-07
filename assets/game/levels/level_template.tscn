@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qtcyjgtgopwv"]
+[gd_scene load_steps=26 format=3 uid="uid://qtcyjgtgopwv"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_bf40j"]
 [ext_resource type="Texture2D" uid="uid://cq4ue11t77mhw" path="res://assets/sprites/environment/Grass.png" id="2_l81vt"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b18d6154x2hk" path="res://assets/game/wave_spawner/wave_spawner.tscn" id="5_7ui3m"]
 [ext_resource type="PackedScene" uid="uid://cgmfwrdnu35nr" path="res://assets/game/market/market.tscn" id="6_shtq4"]
 [ext_resource type="Texture2D" uid="uid://cs0jnou8kbi0w" path="res://assets/sprites/ui/Buttons.png" id="7_b42sb"]
+[ext_resource type="Texture2D" uid="uid://c1x3gcspk5ntg" path="res://assets/sprites/ui/Sun.png" id="8_drxa7"]
+[ext_resource type="Script" path="res://scripts/sun.gd" id="9_a2wfv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxkws"]
 texture = ExtResource("2_l81vt")
@@ -92,6 +94,14 @@ Button/styles/hover = SubResource("StyleBoxTexture_mrlgc")
 Button/styles/normal = SubResource("StyleBoxTexture_emixs")
 Button/styles/pressed = SubResource("StyleBoxTexture_e88a2")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ay8c3"]
+atlas = ExtResource("8_drxa7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv4s8"]
+atlas = ExtResource("8_drxa7")
+region = Rect2(64, 32, 32, 32)
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_bf40j")
 
@@ -127,5 +137,24 @@ offset_bottom = 1065.0
 theme = SubResource("Theme_i136g")
 theme_override_font_sizes/font_size = 28
 text = "START WAVE"
+
+[node name="Sun" type="TextureRect" parent="."]
+z_index = 4096
+texture_filter = 1
+offset_left = 1675.0
+offset_top = 16.0
+offset_right = 1739.0
+offset_bottom = 80.0
+texture = SubResource("AtlasTexture_ay8c3")
+expand_mode = 4
+stretch_mode = 4
+script = ExtResource("9_a2wfv")
+
+[node name="Direction" type="TextureRect" parent="Sun"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 64.0
+offset_bottom = 128.0
+texture = SubResource("AtlasTexture_qv4s8")
 
 [connection signal="pressed" from="StartWave" to="." method="_on_start_wave_pressed"]

@@ -100,6 +100,13 @@ func DEFEND_EXIT():
 		$Market.money += $WaveSpawner.waves[current_wave].reward_money
 	current_wave += 1
 	$StartWave.disabled = false
+	match current_wave:
+		0:
+			$Sun.set_sun_direction($Sun.SunDirection.RIGHT)
+		1:
+			$Sun.set_sun_direction($Sun.SunDirection.DOWN)
+		2:
+			$Sun.set_sun_direction($Sun.SunDirection.LEFT)
 	$Market.set_background_texture(current_wave)
 	
 	
