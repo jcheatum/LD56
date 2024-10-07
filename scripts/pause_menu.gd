@@ -23,3 +23,7 @@ func _on_quit_pressed():
 
 func focus_settings():
 	$ButtonsContainer/Settings.grab_focus()
+
+
+func _on_restart_pressed() -> void:
+	pass # Replace with function body.
