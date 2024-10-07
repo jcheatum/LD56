@@ -7,9 +7,9 @@ func _ready():
 	if ($"../Main/SettingsMenu" != null):
 		$"../Main/SettingsMenu".sfx_vol_set.connect(set_volume)
 
-func set_volume(new_vol: float):
-	volume = new_vol
-	print("SFX Volume: " + str(volume))
+func set_volume(slider_val: float):
+	volume = (slider_val + 80) / 124
+	print("SFX Volume: " + str(linear_to_db(volume)) + "db")
 
 func PlaySoundEffect(stream :AudioStream, volume_scale: float = 1, pitch_scale: float = 1):
 	var available_player: AudioStreamPlayer = null

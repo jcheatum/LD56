@@ -10,10 +10,12 @@ func _ready():
 
 
 func _on_start_pressed():
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	game_start.emit()
 
 
 func _on_settings_pressed():
+	SfxPlayer.PlaySoundEffect(preload("res://assets/sfx/ui_select.wav"))
 	open_settings.emit()
 
 
