@@ -152,6 +152,9 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_synso")
 animation = &"up"
 
+[node name="FlameZone" parent="Flame" index="0"]
+collision_layer = 0
+
 [node name="AnimatedSprite2D" parent="Flame/FlameZone" index="1"]
 scale = Vector2(3.75, 3.75)
 sprite_frames = SubResource("SpriteFrames_b2nkn")

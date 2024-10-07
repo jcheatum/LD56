@@ -15,14 +15,13 @@ func _process(delta: float) -> void:
 func ACTIVE_UPDATE(delta):
 	if raycast2d.is_colliding():
 		var collider = raycast2d.get_collider()
-		if collider != null and collider.has_method("damage"):
-			collider.damage(damage * delta)
-			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
-		if collider != null and collider.has_method("burn"):
-			collider.burn(burn_time)
-			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
-		if collider != null and collider.owner != null and collider.owner.has_method("reflect"):
-			collider.owner.reflect(raycast2d.get_collision_point(),aim_direction,delta,1)
+		if collider != null:
+			if collider.has_method("damage"):
+				collider.damage(damage * delta)
+			if collider.has_method("burn"):
+				collider.burn(burn_time)
+			if collider.owner != null and collider.owner.has_method("reflect"):
+				collider.owner.reflect(raycast2d.get_collision_point(),aim_direction,delta,1)
 			line2d.points[1] = raycast2d.get_collision_point()-raycast2d.global_position
 	else:
 		line2d.points[1] = raycast2d.target_position

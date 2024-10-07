@@ -82,8 +82,8 @@ offset_left = -15.0
 offset_top = -103.0
 offset_right = 105.0
 offset_bottom = -76.0
-max_value = 300.0
-value = 300.0
+max_value = 600.0
+value = 600.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
