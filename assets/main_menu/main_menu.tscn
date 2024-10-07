@@ -50,8 +50,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7jsuf")
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
@@ -72,10 +70,11 @@ stretch_mode = 4
 
 [node name="ButtonsContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 64.0
-offset_right = 704.0
-offset_bottom = 384.0
+offset_left = 259.0
+offset_top = 251.0
+offset_right = 583.0
+offset_bottom = 571.0
+metadata/_edit_group_ = true
 
 [node name="Start" type="Button" parent="ButtonsContainer"]
 texture_filter = 1
