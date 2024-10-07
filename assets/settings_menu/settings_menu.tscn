@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://caoqyrbswv48j"]
+[gd_scene load_steps=6 format=3 uid="uid://caoqyrbswv48j"]
 
 [ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_8rpy5"]
 [ext_resource type="Texture2D" uid="uid://dgto4d1u4goyq" path="res://assets/sprites/Main.png" id="2_8giqv"]
+[ext_resource type="Theme" uid="uid://ejx1e26w2ww1" path="res://assets/button_theme.tres" id="3_l6g4b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_osmpe"]
 font_size = 150
@@ -127,12 +128,14 @@ focus_neighbor_top = NodePath("../../FullscreenContainer/FullscreenCheckBox")
 focus_neighbor_bottom = NodePath("../../../DoneButton")
 
 [node name="DoneButton" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 640.0
 offset_top = 832.0
 offset_right = 1280.0
 offset_bottom = 984.0
 focus_neighbor_top = NodePath("../ColumnsContainer/SfxVolContainer/SfxVolSlider")
+theme = ExtResource("3_l6g4b")
 theme_override_font_sizes/font_size = 60
 text = "Done"
 

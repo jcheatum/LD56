@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5lepvip4no64"]
+[gd_scene load_steps=4 format=3 uid="uid://c5lepvip4no64"]
 
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_7vqpg"]
+[ext_resource type="Theme" uid="uid://ejx1e26w2ww1" path="res://assets/button_theme.tres" id="2_3bvew"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nmwyf"]
 font_size = 150
@@ -33,47 +34,57 @@ offset_right = 1280.0
 offset_bottom = 704.0
 
 [node name="Resume" type="Button" parent="ButtonsContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Quit")
 focus_neighbor_bottom = NodePath("../Restart")
+theme = ExtResource("2_3bvew")
 theme_override_font_sizes/font_size = 60
 text = "Resume"
 
 [node name="Restart" type="Button" parent="ButtonsContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Resume")
 focus_neighbor_bottom = NodePath("../Settings")
+theme = ExtResource("2_3bvew")
 theme_override_font_sizes/font_size = 60
 text = "Restart Level"
 
 [node name="Settings" type="Button" parent="ButtonsContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Resume")
 focus_neighbor_bottom = NodePath("../ToMenu")
+theme = ExtResource("2_3bvew")
 theme_override_font_sizes/font_size = 60
 text = "Settings"
 
 [node name="ToMenu" type="Button" parent="ButtonsContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Settings")
 focus_neighbor_bottom = NodePath("../Quit")
+theme = ExtResource("2_3bvew")
 theme_override_font_sizes/font_size = 60
 text = "Return to Menu"
 
 [node name="Quit" type="Button" parent="ButtonsContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../ToMenu")
 focus_neighbor_bottom = NodePath("../Resume")
+theme = ExtResource("2_3bvew")
 theme_override_font_sizes/font_size = 60
 text = "Quit"
 
