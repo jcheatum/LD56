@@ -6,7 +6,7 @@ signal bug_died(bug_type: String, position: Vector2)
 @export var burn_damage: float = 10.0
 var navigator: NavigationAgent2D
 @onready var velocity: Vector2 = Vector2.ZERO
-@onready var slowed_speed: float = speed * 0.25
+@onready var slowed_speed: float = speed * 0.5
 @onready var unslowed_speed: float = speed
 var health_bar: HealthBar
 var direction_container

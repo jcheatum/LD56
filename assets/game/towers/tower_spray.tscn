@@ -150,7 +150,7 @@ visible = false
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_synso")
-animation = &"up"
+animation = &"down"
 
 [node name="AnimatedSprite2D" parent="Flame/FlameZone" index="1"]
 scale = Vector2(3.75, 3.75)
